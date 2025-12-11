@@ -1,219 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ruby Lee Sweeting — Bahamas Real Estate</title>
-<meta name="description" content="Official site of Ruby Lee Sweeting — Bahamas Real Estate Agent specializing in luxury, residential, and investment properties across The Bahamas.">
-<style>
-  :root {
-    --coral: #ff6f61;
-    --aqua: #15b3c8;
-    --sand: #fef9f0;
-    --shadow: rgba(0,0,0,0.1);
-  }
-  body {
-    font-family: 'Poppins', Arial, sans-serif;
-    margin: 0;
-    background: var(--sand);
-    color: #222;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-  header {
-    position: relative;
-    background: linear-gradient(135deg, var(--aqua), var(--coral));
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-    box-shadow: 0 4px 25px var(--shadow);
-    overflow: hidden;
-  }
-  header::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 60%);
-    opacity: 0.4;
-    z-index: 0;
-  }
-  .header-content {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  header h1 {
-    font-size: 2.8em;
-    margin-bottom: 0.4em;
-    letter-spacing: 0.6px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
-  }
-  header p {
-    font-size: 1.35em;
-    font-style: italic;
-    color: #fffbea;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.35);
-  }
-  @media (max-width: 600px) {
+  <meta charset="utf-8">
+  <title>Ruby Lee Sweeting — Bahamas Real Estate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Official site of Ruby Lee Sweeting — Bahamas Real Estate Agent specializing in luxury, residential, and investment properties across The Bahamas.">
+  <style>
+    :root {
+      --coral: #ff6f61;
+      --aqua: #15b3c8;
+      --sand: #fef9f0;
+      --shadow: rgba(0,0,0,0.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      background: var(--sand);
+      color: #222;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
     header {
-      padding: 70px 15px;
+      position: relative;
+      background: linear-gradient(135deg, var(--aqua), var(--coral));
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+      box-shadow: 0 4px 25px var(--shadow);
+      overflow: hidden;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(0,0,0,0.2), transparent 55%);
+      opacity: 0.45;
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
     }
     header h1 {
-      font-size: 2em;
+      font-size: 2.6rem;
+      margin-bottom: 0.4em;
+      letter-spacing: 0.6px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
     }
-    header p {
-      font-size: 1.1em;
+    header p.hero-tagline {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #fffbea;
+      margin-top: 0;
+      margin-bottom: 0.5em;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.35);
     }
-  }
+    header p.hero-sub {
+      margin-top: 0.3em;
+      font-size: 0.98rem;
+    }
 
-  section {
-    padding: 70px 20px;
-    max-width: 950px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-  }
-  section:nth-of-type(even) {
-    background: linear-gradient(135deg, rgba(21,179,200,0.05), rgba(255,111,97,0.05));
-  }
-  h2 {
-    color: var(--coral);
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.2em;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.08);
-    position: relative;
-    display: inline-block;
-  }
-  h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--aqua), var(--coral));
-    border-radius: 2px;
-  }
-  p {
-    max-width: 850px;
-    margin: 0 auto 15px;
-  }
+    /* LAYOUT SECTIONS */
+    main {
+      padding: 60px 20px 40px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 70px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 30px 22px 32px;
+      box-shadow: 0 10px 25px var(--shadow);
+    }
+    h2.section-title {
+      color: var(--coral);
+      margin-bottom: 22px;
+      font-size: 1.9rem;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    h2.section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--aqua), var(--coral));
+      border-radius: 2px;
+    }
+    p {
+      margin: 0 0 12px;
+    }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-  }
-  .card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 8px 20px var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s;
-    border-top: 5px solid var(--aqua);
-  }
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    border-top: 5px solid var(--coral);
-  }
+    /* GRID CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--aqua);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease;
+      font-size: 0.98rem;
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.02rem;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-top-color: var(--coral);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+    }
 
-  footer {
-    background: linear-gradient(135deg, var(--coral), var(--aqua));
-    color: white;
-    text-align: center;
-    padding: 25px;
-    font-size: 0.95em;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
-  }
-  a {
-    color: var(--coral);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  a:hover {
-    color: var(--aqua);
-    text-decoration: underline;
-  }
-  .contact {
-    text-align: center;
-  }
-</style>
+    /* CONTACT */
+    .contact-block {
+      text-align: center;
+      font-size: 0.98rem;
+    }
+    .contact-block p {
+      margin-bottom: 6px;
+    }
+    .contact-block a {
+      color: var(--aqua);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-block a:hover {
+      color: var(--coral);
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(135deg, var(--coral), var(--aqua));
+      color: white;
+      text-align: center;
+      padding: 18px 12px;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 720px) {
+      header {
+        padding: 60px 16px;
+      }
+      header h1 {
+        font-size: 2.1rem;
+      }
+      header p.hero-tagline {
+        font-size: 1.1rem;
+      }
+      main {
+        padding: 40px 14px 28px;
+      }
+      section {
+        padding: 22px 16px 24px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="header-content">
-      <h1>Find your slice of Bahamian bliss with Ruby Sweeting</h1>
-      <p>One home, one investment, one dream at a time.</p>
+    <div class="hero-inner">
+      <h1>Discover the Beauty of Bahamian Living with Ruby Sweeting</h1>
+      <p class="hero-tagline">Find your slice of Bahamian bliss with Ruby Sweeting — one home, one investment, one dream at a time.</p>
+      <p class="hero-sub">
+        Real Estate Agent, 15+ years’ experience in sales, rentals, and property management across The Bahamas —
+        backed by a wide range of experience in business administration and tourism-related programs.
+      </p>
     </div>
   </header>
 
   <main>
+    <!-- ABOUT -->
     <section id="about">
-      <h2>About Ruby</h2>
-      <p><strong>Ruby Lee Sweeting</strong> is a Real Estate Agent with over 15 years’ experience in sales, rentals, and property management—covering the full spectrum of Bahamian real estate. From luxury homes and resort properties to affordable family residences, undeveloped land, and multi-family investments, Ruby’s expertise spans every corner of the islands.</p>
-      <p>She has partnered in the sale of several multi-million dollar commercial developments, bringing not only market insight but also the professionalism and passion that come from years of business management and program development. Ruby takes pride in her ability to connect personally with clients, offering attentive, one-on-one service and a commitment to detail that ensures every client’s journey is rewarding.</p>
-      <p>“Not every real estate day is easy, but it’s always worth it—especially when you love helping people,” says Ruby. “And I really do!”</p>
-      <p><strong>Member:</strong> Bahamas Real Estate Association (BREA) & Bahamas Multiple Listing Service (BMLS)</p>
+      <h2 class="section-title">About Ruby</h2>
+      <p><strong>Ruby Lee Sweeting</strong> is a Real Estate Agent with over 15 years’ experience in sales, rentals, and property management—covering the full spectrum of Bahamian real estate.</p>
+      <p>From luxury homes and resort properties to affordable family residences, undeveloped land, and multi-family investments, Ruby’s expertise spans every corner of the islands. She has partnered in the sale of several multi-million dollar commercial developments, bringing not only market insight but also the professionalism and passion that come from years in business management and program development.</p>
+      <p>Ruby takes pride in her ability to connect personally with clients, offering attentive, one-on-one service and a commitment to detail that ensures every client’s journey is rewarding.</p>
+      <p>“Not every real estate day is easy, but it has its advantages—especially if you like helping people. And I really do!”</p>
+      <p><strong>Member:</strong> Bahamas Real Estate Association (BREA) &amp; Bahamas Multiple Listing Service (BMLS)</p>
     </section>
 
+    <!-- LISTINGS -->
     <section id="listings">
-      <h2>Featured Listings</h2>
+      <h2 class="section-title">Featured Listings (BMLS Highlights)</h2>
+      <p style="text-align:center; margin-bottom:16px;">
+        A snapshot of the kinds of properties Ruby can help you discover — with full details and current availability available through the Bahamas MLS (compliments of BREA).
+      </p>
       <div class="grid">
         <div class="card">
-          <strong>Oceanview Paradise Villa</strong><br>
-          A stunning 4-bedroom villa with panoramic Atlantic views in Nassau—ideal as a private residence or luxury vacation rental.
+          <strong>Oceanview Paradise Villa — Nassau</strong>
+          A stunning 4-bedroom villa with panoramic Atlantic views, ideal as a primary residence, vacation escape, or rental investment.
         </div>
         <div class="card">
-          <strong>Charming Eleuthera Cottage</strong><br>
-          Cozy 2-bedroom beachfront cottage perfect for a peaceful island lifestyle or Airbnb-style income.
+          <strong>Charming Eleuthera Cottage</strong>
+          Cozy 2-bedroom beachfront cottage, perfect for a relaxed island lifestyle or income-producing vacation rental.
         </div>
         <div class="card">
-          <strong>Luxury Harbour Island Estate</strong><br>
-          Spacious 5-bedroom estate with private dock and infinity pool—tailor-made for the discerning investor.
-        </div>
-        <div class="card">
-          <strong>Cozy Grand Bahama Condo (Under $300K)</strong><br>
-          Modern 1-bedroom, 1-bath condo in Freeport listed at approximately $255,000 — ideal for first-time buyers or vacation investors.
+          <strong>Luxury Harbour Island Estate</strong>
+          Spacious 5-bedroom estate with private dock and infinity pool — a rare opportunity in one of The Bahamas’ most desirable communities.
         </div>
       </div>
+      <p style="text-align:center; margin-top:18px; font-size:0.95rem;">
+        Looking for something specific under $300K or in a particular island or neighborhood?  
+        Ruby can search the BMLS for you and share a tailored list of opportunities.
+      </p>
     </section>
 
+    <!-- TESTIMONIALS -->
     <section id="testimonials">
-      <h2>Client Testimonials</h2>
+      <h2 class="section-title">What Clients Say</h2>
       <div class="grid">
         <div class="card">
-          “Professional, knowledgeable, and personable. Highly recommended!” — <em>Kayla Saunders</em>
+          “Professional, knowledgeable, and personable. Highly recommended!”
+          — <em>Kayla Saunders</em>
         </div>
         <div class="card">
-          “Sharp instincts, kind heart, and a true understanding of Bahamian living.” — <em>Julius & Deon</em>
+          “Sharp instincts, kind heart, and a true understanding of Bahamian living.”
+          — <em>Julius &amp; Deon</em>
         </div>
         <div class="card">
-          “Detail oriented — nothing gets overlooked or left to chance. Ms. Sweeting is attentive and helpful.” — <em>KB</em>
+          “Detail oriented — nothing gets overlooked or left to chance. Ms. Sweeting is attentive and helpful.”
+          — <em>KB</em>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
-      <h2>Contact Ruby</h2>
-      <div class="contact">
+      <h2 class="section-title">Contact Ruby</h2>
+      <div class="contact-block">
+        <p><strong>Agent:</strong> RE/MAX 1 OAK Bahamas</p>
         <p>
-          <strong>Agent:</strong> RE/MAX 1 OAK Bahamas<br>
-          📧 <a href="mailto:ruby@1oakbahamas.com">ruby@1oakbahamas.com</a><br>
-          📱 <a href="https://wa.me/12428283201" target="_blank">WhatsApp: +1 242-828-3201</a><br>
-          ☎️ Office: +1 (242) 605-5555<br>
-          🌐 <a href="https://www.facebook.com/rubysweeting" target="_blank">Facebook</a> |
-          <a href="https://www.linkedin.com/in/rubysweeting" target="_blank">LinkedIn</a> |
-          <a href="https://www.tiktok.com/@rubysweeting" target="_blank">TikTok</a>
+          📧 Email:
+          <a href="mailto:ruby@1oakbahamas.com">ruby@1oakbahamas.com</a>
+        </p>
+        <p>
+          📱 WhatsApp:
+          <a href="https://wa.me/12428283201" target="_blank" rel="noopener">
+            +1 (242) 828-3201
+          </a>
+        </p>
+        <p>☎️ Office: +1 (242) 605-5555</p>
+        <p>
+          🌐 Social:
+          <a href="https://www.facebook.com/rubysweeting" target="_blank" rel="noopener">Facebook</a> ·
+          <a href="https://www.linkedin.com/in/rubysweeting" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a href="https://www.tiktok.com/@rubysweeting" target="_blank" rel="noopener">TikTok</a> ·
+          <a href="https://www.instagram.com/rubysweeting" target="_blank" rel="noopener">Instagram</a>
+        </p>
+        <p style="margin-top:12px; font-size:0.9rem;">
+          For a detailed résumé or a custom property search report, send a quick email or WhatsApp message —
+          Ruby will be happy to respond personally.
         </p>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2025 Ruby Lee Sweeting — Bahamas Real Estate Agent
+    © 2025 Ruby Lee Sweeting — Bahamas Real Estate Agent | RE/MAX 1 OAK Bahamas
   </footer>
 </body>
 </html>
