@@ -2,185 +2,360 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruby Lee Sweeting — Bahamas Real Estate</title>
-  <meta name="description" content="Ruby Lee Sweeting — Bahamas Real Estate Agent (RE/MAX 1 OAK Bahamas). Sales, rentals, and property management across The Bahamas." />
-  <style>
-   <style>
-  :root { ... }
-  ...
-</style>
- :root{
+  <meta name="description" content="Ruby Lee Sweeting — RE/MAX 1 OAK Bahamas. Sales, rentals, property management, and investment guidance across Nassau, Paradise Island, and the Family Islands." />
 
-    
+  <style>
+    :root{
+      --coral:#ff6f61;
+      --aqua:#15b3c8;
+      --sand:#fef9f0;
+      --ink:#102a2e;
+      --shadow:rgba(0,0,0,.12);
+      --card:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background:var(--sand);
+      color:var(--ink);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* Header */
+    header{
+      position:relative;
+      color:#fff;
+      text-align:center;
+      padding:72px 18px 56px;
+      background: linear-gradient(135deg, var(--aqua), var(--coral));
+      box-shadow: 0 8px 30px var(--shadow);
+      overflow:hidden;
+    }
+    header::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(circle at 20% 10%, rgba(255,255,255,.25), transparent 55%),
+                  radial-gradient(circle at 90% 70%, rgba(255,255,255,.18), transparent 60%);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .header-content{position:relative; z-index:1; max-width:980px; margin:0 auto}
+    .header-images{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+
+    /* Photo sizing fix (smaller + consistent) */
+    .header-brand{
+      width:110px;
+      height:110px;
+      object-fit:contain;
+      background:rgba(255,255,255,.18);
+      border-radius:18px;
+      padding:10px;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
+    .header-logo{
+      width:110px;
+      height:110px;
+      object-fit:cover;
+      border-radius:999px;
+      border:4px solid rgba(255,255,255,.55);
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
+
+    h1{
+      margin:10px 0 10px;
+      font-size: clamp(28px, 4.3vw, 46px);
+      letter-spacing:.3px;
+      text-shadow: 0 6px 22px rgba(0,0,0,.25);
+    }
+    .subhead{
+      margin:0 auto;
+      max-width:840px;
+      font-size: clamp(15px, 2.0vw, 20px);
+      opacity:.95;
+      font-style:italic;
+      text-shadow: 0 4px 16px rgba(0,0,0,.22);
+    }
+
+    /* Layout */
+    main{max-width:980px; margin:0 auto}
+    section{padding:56px 18px}
+    section:nth-of-type(even){
+      background: linear-gradient(135deg, rgba(21,179,200,.06), rgba(255,111,97,.06));
+    }
+    h2{
+      margin:0 0 18px;
+      text-align:center;
+      color:var(--coral);
+      font-size: clamp(22px, 3vw, 34px);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:18px;
+      margin-top:16px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:18px 18px 16px;
+      box-shadow: 0 10px 24px var(--shadow);
+      border-top:5px solid var(--aqua);
+    }
+    .card strong{display:block; margin-bottom:6px}
+    .muted{opacity:.82}
+    .center{text-align:center}
+    .subtle{max-width:880px; margin:0 auto}
+
+    /* Pills */
+    .pillrow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:14px;
+    }
+    .pill{
+      background:rgba(21,179,200,.12);
+      border:1px solid rgba(21,179,200,.22);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      border:2px solid transparent;
+      transition: transform .12s ease, opacity .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); opacity:.95}
+    .btn-primary{background:var(--coral); color:#fff}
+    .btn-outline{background:transparent; color:var(--coral); border-color: var(--coral)}
+    .cta-row{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:16px}
+
+    /* Listings */
+    .listing-top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:8px;
+    }
+    .tag{
+      font-size:12px;
+      font-weight:800;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,111,97,.12);
+      border:1px solid rgba(255,111,97,.22);
+      white-space:nowrap;
+    }
+    ul.bullets{margin:10px 0 0; padding-left:18px}
+    .cta-bar{
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      background:rgba(21,179,200,.10);
+      border:1px solid rgba(21,179,200,.18);
+      padding:14px 14px;
+      border-radius:14px;
+    }
+
+    /* Form */
+    form{
+      max-width:560px;
+      margin:18px auto 0;
+      text-align:left;
+      background:#fff;
+      border-radius:14px;
+      padding:16px;
+      box-shadow: 0 10px 24px var(--shadow);
+      border-top:5px solid var(--aqua);
+    }
+    label{font-weight:700; font-size:14px}
+    input, textarea{
+      width:100%;
+      padding:10px;
+      margin:8px 0 12px;
+      border:1px solid rgba(0,0,0,.18);
+      border-radius:10px;
+      font-size:15px;
+    }
+
+    footer{
+      text-align:center;
+      padding:22px 16px;
+      color:#fff;
+      background: linear-gradient(135deg, var(--coral), var(--aqua));
+    }
+
+    @media (max-width:520px){
+      header{padding-top:58px}
+      .header-brand,.header-logo{width:96px;height:96px}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="header-images">
+        <!-- These filenames MUST exist in /public -->
+        <img src="remaxlogo.jpeg" alt="RE/MAX 1 OAK Bahamas" class="header-brand">
+        <img src="rubyheadshot.jpeg" alt="Ruby Lee Sweeting" class="header-logo">
       </div>
+
+      <h1>Discover Bahamian Living with Ruby Sweeting</h1>
+      <p class="subhead">From Nassau & Paradise Island to the Family Islands — your unique property awaits, one home, one investment, one dream at a time.</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Start Your Search</a>
+        <a class="btn btn-outline" href="#listings">View Featured Opportunities</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Ruby</h2>
+      <p class="subtle">
+        <strong>Ruby Lee Sweeting</strong> is a Bahamas Real Estate Agent with 15+ years’ experience in sales, rentals, and property management —
+        spanning luxury residences, first-time buyer homes, undeveloped land, and multi-family investments.
+        Ruby also brings strong business management and program development experience, helping clients feel confident from first viewing to closing day.
+      </p>
+
+      <div class="pillrow">
+        <div class="pill">Member: BREA</div>
+        <div class="pill">Member: BMLS</div>
+        <div class="pill">Agent: RE/MAX 1 OAK Bahamas</div>
+      </div>
+    </section>
+
+    <section id="why">
+      <h2>Why Work With Ruby</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Local insight, global-ready</strong>
+          <div class="muted">Clear guidance for overseas buyers and Bahamian residents — timelines, neighborhoods, and realistic expectations.</div>
+        </div>
+        <div class="card">
+          <strong>Detail-oriented service</strong>
+          <div class="muted">Organized, responsive, and thorough — so nothing gets overlooked or left to chance.</div>
+        </div>
+        <div class="card">
+          <strong>Results you can trust</strong>
+          <div class="muted">From showings to closing coordination, Ruby helps keep your transaction moving smoothly.</div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Message Ruby</a>
+        <a class="btn btn-outline" href="#contact">Request a Call</a>
+      </div>
+    </section>
+
+    <section id="fib">
+      <h2>For International Buyers</h2>
+      <p class="subtle center">
+        Buying in The Bahamas can be simple with the right guidance. Ruby helps overseas clients compare locations, understand ownership options,
+        and shortlist properties that fit budget, lifestyle, and investment goals — while also supporting Bahamian residents looking to buy, sell, or upgrade.
+      </p>
     </section>
 
     <section id="listings">
-     <section id="why-ruby">
-  <h2>Why Work With Ruby</h2>
+      <h2>Featured Listings</h2>
 
-  <div class="grid why-grid">
-    <div class="card">
-      <h3>Local Expertise. Global Perspective.</h3>
-      <p>
-        Ruby understands the nuances of Bahamian real estate — from Nassau/Paradise Island, Freeport, and
-        throughout the Family Islands — while guiding international buyers through ownership, residency,
-        and investment considerations with clarity and confidence.
+      <p class="subtle center">
+        A curated snapshot across Nassau, Paradise Island, and the Family Islands — ideal for <strong>international buyers</strong>, second-home seekers,
+        and <strong>Bahamian residents</strong> ready to move or invest. (For current BMLS options, message Ruby — listings change daily.)
       </p>
-    </div>
 
-    <div class="card">
-      <h3>Detail-Driven Representation</h3>
-      <p>
-        From property due diligence to contract coordination, Ruby is known for her meticulous
-        attention to detail. Nothing is rushed, nothing is overlooked, and every client decision
-        is fully informed.
-      </p>
-    </div>
+      <div class="grid listings">
+        <article class="card">
+          <div class="listing-top">
+            <h3 style="margin:0">Lock-and-Leave Condo</h3>
+            <span class="tag">Overseas-friendly</span>
+          </div>
+          <p class="muted">Low-maintenance ownership with rental appeal — great for winter escapes, corporate stays, or short-term rental strategy.</p>
+          <ul class="bullets">
+            <li>Easy upkeep + secure living</li>
+            <li>Rental income potential</li>
+            <li>Close to key amenities</li>
+          </ul>
+          <a class="btn btn-outline" href="#contact">Request options</a>
+        </article>
 
-    <div class="card">
-      <h3>Personal, One-on-One Service</h3>
-      <p>
-        Real estate is personal — and Ruby treats it that way. Whether helping a Bahamian family
-        secure their next home or assisting an overseas buyer with a first Bahamas purchase,
-        her approach is hands-on, responsive, and genuinely client-focused.
-      </p>
-    </div>
-  </div>
+        <article class="card">
+          <div class="listing-top">
+            <h3 style="margin:0">Nassau / Paradise Island Access</h3>
+            <span class="tag">Local demand</span>
+          </div>
+          <p class="muted">Convenience for professionals, families, and investors — beaches, schools, shopping, and lifestyle nearby.</p>
+          <ul class="bullets">
+            <li>Prime location benefits</li>
+            <li>Resale + rental interest</li>
+            <li>Everyday convenience</li>
+          </ul>
+          <a class="btn btn-outline" href="#contact">Ask about availability</a>
+        </article>
 
-       <section id="fib">
-  <h2>FIB — Frequently Asked (International & Local Buyers)</h2>
+        <article class="card">
+          <div class="listing-top">
+            <h3 style="margin:0">Family Island Lifestyle</h3>
+            <span class="tag">Second home</span>
+          </div>
+          <p class="muted">Beachfront, near-beach, or island-community options — retirement plans, vacation living, or a slower pace.</p>
+          <ul class="bullets">
+            <li>True Bahamian lifestyle</li>
+            <li>Vacation rental potential</li>
+            <li>Land + home options</li>
+          </ul>
+          <a class="btn btn-outline" href="#contact">Get a short list</a>
+        </article>
 
-  <div class="grid">
-    <div class="card">
-      <strong>Can overseas buyers purchase property in The Bahamas?</strong><br>
-      Yes. International buyers can purchase property in The Bahamas, and Ruby can guide you through the usual steps from offer to closing.
-    </div>
-
-    <div class="card">
-      <strong>Do I need to be in The Bahamas to buy?</strong><br>
-      Not necessarily. Ruby can coordinate virtual viewings, inspections, and attorney introductions so you can move forward confidently from abroad.
-    </div>
-
-    <div class="card">
-      <strong>What are typical closing steps?</strong><br>
-      Buyers usually work with a Bahamian attorney, complete due diligence, and finalize closing documents. Ruby stays with you through each milestone.
-    </div>
-
-    <div class="card">
-      <strong>Can you help locals too (Nassau / Paradise Island)?</strong><br>
-      Absolutely — whether you’re upgrading, downsizing, investing, or buying your first home, Ruby helps Nassau & Paradise Island buyers find the right fit.
-    </div>
-
-    <div class="card">
-      <strong>How do we start?</strong><br>
-      Message Ruby with your budget, preferred island/area, and timeline — you’ll get curated options and a clear plan for next steps.
-    </div>
-
-    <div class="card">
-      <strong>Important note</strong><br>
-      Requirements can vary by property type and buyer profile. Ruby will coordinate with your attorney and advisors for the right path.
-    </div>
-  </div>
-
-  <div class="cta-row" style="text-align:center; margin-top:22px;">
-    <a class="btn" href="#contact">Start Your Search</a>
-    <a class="btn btn-outline" href="https://wa.me/12428283201" target="_blank" rel="noopener">WhatsApp Ruby</a>
-  </div>
-</section>
-
-  <div class="cta-center">
-    <a href="#contact" class="cta-button">Let’s Talk About Your Goals</a>
-  </div>
-</section>
-
-      <section id="listings">
-  <h2>Featured Listings</h2>
-
-  <p class="subtle center">
-    A curated snapshot of opportunities across Nassau, Paradise Island, and the Family Islands — ideal for
-    <strong>international buyers</strong>, second-home seekers, and <strong>Bahamian residents</strong> ready to move or invest.
-    (For current BMLS options, message Ruby — listings change daily.)
-  </p>
-
-  <div class="grid listings">
-    <article class="card listing">
-      <div class="listing-top">
-        <h3>Lock-and-Leave Condo</h3>
-        <span class="tag">Overseas-friendly</span>
+        <article class="card">
+          <div class="listing-top">
+            <h3 style="margin:0">Investment / Multi-Family</h3>
+            <span class="tag">Cash-flow</span>
+          </div>
+          <p class="muted">Duplexes, triplexes, and value plays — structured for long-term income with upside through improvements or management.</p>
+          <ul class="bullets">
+            <li>Income-producing focus</li>
+            <li>Renovation/value-add ideas</li>
+            <li>Clear numbers & guidance</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Run the numbers</a>
+        </article>
       </div>
-      <p class="muted">
-        Low-maintenance ownership with strong rental appeal — great for winter escapes, corporate stays, or short-term rental strategy.
-      </p>
-      <ul class="bullets">
-        <li>Easy upkeep + secure living</li>
-        <li>Rental income potential</li>
-        <li>Close to key amenities</li>
-      </ul>
-      <a class="btn btn-outline" href="#contact">Request options</a>
-    </article>
 
-    <article class="card listing">
-      <div class="listing-top">
-        <h3>Nassau / Paradise Island Access</h3>
-        <span class="tag">Local demand</span>
+      <div class="cta-bar">
+        <div>
+          <strong>Want listings that match your budget and timeline?</strong>
+          <div class="muted">Tell Ruby what you want — she’ll send a short curated list (with BMLS links where available).</div>
+        </div>
+        <a class="btn btn-primary" href="#contact">Start Your Search</a>
       </div>
-      <p class="muted">
-        Ideal for professionals, families, or investors who want convenience — beaches, schools, shopping, and lifestyle all nearby.
-      </p>
-      <ul class="bullets">
-        <li>Prime location benefits</li>
-        <li>Resale + rental interest</li>
-        <li>Everyday convenience</li>
-      </ul>
-      <a class="btn btn-outline" href="#contact">Ask about availability</a>
-    </article>
-
-    <article class="card listing">
-      <div class="listing-top">
-        <h3>Family Island Lifestyle</h3>
-        <span class="tag">Second home</span>
-      </div>
-      <p class="muted">
-        Beachfront, near-beach, or island-community properties — perfect for a slower pace, retirement plans, or vacation living.
-      </p>
-      <ul class="bullets">
-        <li>True Bahamian lifestyle</li>
-        <li>Vacation rental potential</li>
-        <li>Land + home options</li>
-      </ul>
-      <a class="btn btn-outline" href="#contact">Get a short list</a>
-    </article>
-
-    <article class="card listing featured">
-      <div class="listing-top">
-        <h3>Investment / Multi-Family</h3>
-        <span class="tag">Cash-flow</span>
-      </div>
-      <p class="muted">
-        Duplexes, triplexes, and value plays — structured for long-term income with upside through improvements or management.
-      </p>
-      <ul class="bullets">
-        <li>Income-producing focus</li>
-        <li>Renovation/value-add ideas</li>
-        <li>Clear numbers & guidance</li>
-      </ul>
-      <a class="btn btn-primary" href="#contact">Run the numbers</a>
-    </article>
-  </div>
-
-  <div class="cta-bar">
-    <div>
-      <strong>Want listings that match your budget and timeline?</strong>
-      <div class="muted">Tell Ruby what you want — she’ll send a short, curated list (with BMLS links where available).</div>
-    </div>
-    <a class="btn btn-primary" href="#contact">Start Your Search</a>
-  </div>
-</section>
-
     </section>
-<section id="fib">
 
     <section id="testimonials">
       <h2>Client Testimonials</h2>
@@ -193,32 +368,39 @@
 
     <section id="contact">
       <h2>Contact Ruby</h2>
-      <div class="contact">
-        <p>
-          📧 <a href="mailto:ruby@1oakbahamas.com">ruby@1oakbahamas.com</a><br>
-          📱 <a href="https://wa.me/12428283201">WhatsApp: +1 242-828-3201</a><br>
-          ☎️ Office: +1 (242) 605-5555<br>
-          🌐 <a href="https://www.facebook.com/rubysweeting">Facebook</a> |
-          <a href="https://www.linkedin.com/in/rubysweeting">LinkedIn</a> |
-          <a href="https://www.tiktok.com/@rubysweeting">TikTok</a> |
-          <a href="https://www.instagram.com/rubysweeting">Instagram</a>
-        </p>
-      </div>
 
-      <!-- Netlify Forms (works when deployed on Netlify) -->
+      <p class="center subtle">
+        <strong>Agent:</strong> RE/MAX 1 OAK Bahamas<br>
+        📧 <a href="mailto:ruby@1oakbahamas.com">ruby@1oakbahamas.com</a> &nbsp;|&nbsp;
+        📱 <a href="https://wa.me/12428283201">WhatsApp: +1 242-828-3201</a> &nbsp;|&nbsp;
+        ☎️ Office: +1 (242) 605-5555
+        <br>
+        🌐 <a href="https://www.facebook.com/rubysweeting">Facebook</a> |
+        <a href="https://www.linkedin.com/in/rubysweeting">LinkedIn</a> |
+        <a href="https://www.tiktok.com/@rubysweeting">TikTok</a> |
+        <a href="https://www.instagram.com/rubysweeting">Instagram</a>
+      </p>
+
+      <!-- Netlify form -->
       <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="form-name" value="contact" />
         <label>Your Name</label>
-        <input type="text" name="name" required>
+        <input type="text" name="name" required />
+
         <label>Email</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email" required />
+
         <label>Message</label>
         <textarea name="message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
+
+        <button class="btn btn-primary" type="submit">Send Message</button>
       </form>
     </section>
   </main>
 
-  <footer>© 2025 Ruby Lee Sweeting — Bahamas Real Estate Agent</footer>
+  <footer>
+    © 2025 Ruby Lee Sweeting — Bahamas Real Estate
+  </footer>
 </body>
 </html>
+
