@@ -77,6 +77,126 @@
   box-shadow: 0 16px 34px rgba(0,0,0,.22);
   background: rgba(255,255,255,.12);
 }
+/* === WOW HEADER POLISH (Soft Luxury + Tropical) === */
+
+header{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Atmospheric light layer (Bahamas “sun on water”) */
+header::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,.22), transparent 46%),
+    radial-gradient(circle at 82% 22%, rgba(255,255,255,.14), transparent 42%),
+    radial-gradient(circle at 55% 92%, rgba(0,0,0,.12), transparent 46%),
+    linear-gradient(180deg, rgba(255,255,255,.07), transparent 58%);
+  pointer-events:none;
+  animation: drift 11s ease-in-out infinite;
+}
+
+@keyframes drift{
+  0%{ transform: translate3d(0,0,0); }
+  50%{ transform: translate3d(-10px, 6px, 0); }
+  100%{ transform: translate3d(0,0,0); }
+}
+
+/* Keep header content above the glow layer */
+.header-content{
+  position: relative;
+  z-index: 1;
+}
+
+/* Image row layout */
+.header-images{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+/* RE/MAX logo “glass badge” (no paper square) */
+.header-brand{
+  width: 150px;
+  height: auto;
+  max-height: 64px;
+  object-fit: contain;
+
+  background: rgba(255,255,255,.10);
+  padding: 10px 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.22);
+
+  box-shadow: 0 14px 30px rgba(0,0,0,.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* keeps logo crisp */
+  filter: drop-shadow(0 10px 14px rgba(0,0,0,.18));
+}
+
+/* Headshot: more centered + subtle exposure lift */
+.header-logo{
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  object-fit: cover;
+
+  /* Adjust vertical crop: smaller % = moves face UP, larger % = DOWN */
+  object-position: 50% 35%;
+
+  /* subtle enhancement (not gimmicky) */
+  filter: brightness(1.06) contrast(1.06) saturate(1.02);
+
+  border: 3px solid rgba(255,255,255,.72);
+  box-shadow: 0 18px 38px rgba(0,0,0,.22);
+  background: rgba(255,255,255,.10);
+}
+
+/* Premium hover (keeps your hover style, but cleaner) */
+.header-brand, .header-logo{
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease, background .18s ease;
+}
+.header-brand:hover, .header-logo:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 44px rgba(0,0,0,.24);
+  filter: brightness(1.03);
+}
+
+/* Headline polish */
+h1{
+  letter-spacing: .2px;
+  line-height: 1.08;
+}
+
+.hero-break{
+  display:block;
+  font-weight: 700;
+  opacity: .98;
+}
+
+/* Subhead refinement (more elegant rhythm) */
+.subhead{
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: .96;
+}
+
+/* Credibility line under the subhead */
+.hero-cred{
+  margin: 10px auto 0;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .2px;
+  opacity: .92;
+  color: rgba(255,255,255,.92);
+}
+.dot{ opacity:.7; padding:0 6px; }
 
     h1{
       margin:10px 0 10px;
