@@ -213,6 +213,15 @@
       background: linear-gradient(135deg, var(--coral), var(--aqua));
     }
 
+    .header-brand, .header-logo{
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.header-brand:hover, .header-logo:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,.24);
+}
+
     @media (max-width:520px){
       header{padding-top:58px}
       .header-brand,.header-logo{width:96px;height:96px}
