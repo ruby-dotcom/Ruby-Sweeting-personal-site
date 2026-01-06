@@ -333,41 +333,37 @@ h1{
       background: linear-gradient(135deg, var(--coral), var(--aqua));
     }
 
-    .header-brand, .header-logo{
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-}
-.header-brand:hover, .header-logo:hover{
-  transform: translateY(-2px);
-  filter: brightness(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,.24);
-}
+    <header class="hero" role="banner">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
 
-    @media (max-width:520px){
-      header{padding-top:58px}
-      .header-brand,.header-logo{width:96px;height:96px}
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <div class="header-content">
-      <div class="header-images">
-        <!-- These filenames MUST exist in /public -->
+  <div class="header-content">
+    <div class="header-images">
+      <div class="brand-badge" title="Agent: RE/MAX 1 OAK Bahamas">
         <img src="remaxlogo.jpeg" alt="RE/MAX 1 OAK Bahamas" class="header-brand">
-        <img src="28f981a8-6d28-4b3f-9f66-135a7a398223.jpeg" alt="Ruby Lee Sweeting" class="header-logo">
+        <span class="brand-text">RE/MAX 1 OAK Bahamas</span>
       </div>
 
-      <h1>Discover Bahamian Living <span class="hero-break">with Ruby Sweeting</span></h1>
-      <p class="subhead">From Nassau & Paradise Island to the Family Islands — your unique property awaits, one home, one investment, one dream at a time.</p>
-<p class="hero-cred">Agent • RE/MAX 1 OAK Bahamas <span class="dot">•</span> Member: BREA &amp; BMLS</p>
-
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#contact">Start Your Search</a>
-        <a class="btn btn-outline" href="#listings">View Featured Opportunities</a>
-      </div>
+      <img src="rubyheadshot.jpeg" alt="Ruby Lee Sweeting" class="header-logo">
     </div>
-  </header>
+
+    <h1>Discover Bahamian Living with Ruby Sweeting</h1>
+
+    <p class="subhead">
+      From Nassau &amp; Paradise Island to the Family Islands —
+      your unique property awaits, <strong>one home, one investment, one dream at a time.</strong>
+    </p>
+
+    <p class="hero-affiliation">
+      Real Estate Agent • Member: BREA &amp; BMLS • Agent: RE/MAX 1 OAK Bahamas
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Start Your Search</a>
+      <a class="btn btn-outline" href="#listings">View Featured Opportunities</a>
+    </div>
+  </div>
+</header>
 
   <main>
     <section id="about">
