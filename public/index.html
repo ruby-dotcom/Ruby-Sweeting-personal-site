@@ -184,6 +184,18 @@ header::after{
     letter-spacing: -0.02em;
   }
 }
+/* CTA Button polish */
+.btn{
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.16);
+}
+.btn:active{
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+}
 
 </style>
    
@@ -214,8 +226,9 @@ header::after{
     </p>
 
     <div class="cta-row">
-      <a class="btn btn-primary" href="#contact">Start Your Search</a>
-      <a class="btn btn-outline" href="#listings">View Featured Opportunities</a>
+      <a class="btn btn-primary" href="#contact">Get a Curated Shortlist</a>
+<a class="btn btn-outline" href="#listings">Browse Featured Listings</a>
+
     </div>
   </div>
 </header>
@@ -338,10 +351,10 @@ header::after{
 
       <div class="cta-bar">
         <div>
-          <strong>Want listings that match your budget and timeline?</strong>
-          <div class="muted">Tell Ruby what you want — she’ll send a short curated list (with BMLS links where available).</div>
-        </div>
-        <a class="btn btn-primary" href="#contact">Start Your Search</a>
+          <strong>Tell me what you’re looking for — I’ll send a shortlist.</strong>
+<div class="muted">Share your budget, island, and timeframe. I’ll reply with a curated selection (including BMLS links where available).</div>
+<a class="btn btn-primary" href="#contact">Request My Shortlist</a>
+
       </div>
     </section>
 <section id="homeownership">
