@@ -437,6 +437,34 @@ header::after{
   background: rgba(255,255,255,.62);
   padding: 20px 20px;
 }
+/* === LISTINGS: SCANABILITY POLISH === */
+.bullets{
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 16px;
+}
+
+.bullets li{
+  position: relative;
+  padding-left: 22px;
+  margin: 8px 0;
+}
+
+.bullets li::before{
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .8;
+}
+
+.card.listing h3{
+  font-weight: 720;
+}
+
+.card.listing .muted{
+  margin-top: 8px;
+}
 
 </style>
    
