@@ -507,6 +507,41 @@ header::after{
 .header-images > *:hover{
   transform: translateY(-2px);
 }
+/* === FINAL HEADER SPACING + CONTRAST POLISH === */
+
+/* More breathing room between images and text */
+.header-content{
+  padding-top: 18px;
+}
+
+.header-images{
+  margin-bottom: 26px;
+}
+
+/* Increase contrast separation from hero background */
+.hero-overlay{
+  background:
+    radial-gradient(900px 520px at 18% 18%, rgba(0,0,0,.45), transparent 55%),
+    linear-gradient(110deg, rgba(0,20,45,.78), rgba(0,20,45,.35) 55%, rgba(0,0,0,.18));
+}
+
+/* Subtle image clarity boost (not obvious, not fake) */
+.header-logo,
+.header-brand{
+  filter: brightness(1.04) contrast(1.06);
+}
+
+/* Headline spacing refinement */
+.hero h1{
+  margin-top: 22px;
+  margin-bottom: 12px;
+}
+
+.hero .subhead{
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 </style>
    
