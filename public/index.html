@@ -372,6 +372,71 @@ header::after{
   box-shadow: 0 18px 54px rgba(0,0,0,.10);
   padding: 18px 18px;
 }
+/* === FEATURED LISTINGS: LUXURY EDITORIAL OVERRIDES === */
+.grid.listings{
+  gap:28px;
+}
+
+.card.listing{
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(0,0,0,.05);
+  box-shadow: 0 10px 32px rgba(0,0,0,.08);
+  padding: 26px 24px;
+}
+
+.card.listing::before{
+  opacity: .10; /* subtle tint always on */
+}
+
+.card.listing:hover::before{
+  opacity: .22;
+}
+
+.card.listing:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.12);
+}
+
+.tag{
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,.55);
+  color: rgba(0,0,0,.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.card.listing h3{
+  font-size: 1.18rem;
+  letter-spacing: .12px;
+}
+
+.card.listing .muted{
+  opacity: .86;
+}
+
+.bullets{
+  padding-left: 16px;
+}
+
+.card.listing .btn{
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+.card.listing .btn:hover{
+  border-color: rgba(0,0,0,.14);
+}
+
+/* Featured card feels like a "spotlight" instead of a different card */
+.card.listing.featured{
+  border: 1px solid rgba(255,111,97,.18);
+  box-shadow: 0 18px 52px rgba(0,0,0,.12);
+}
+
+#listings .cta-bar{
+  background: rgba(255,255,255,.62);
+  padding: 20px 20px;
+}
 
 </style>
    
