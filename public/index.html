@@ -253,6 +253,125 @@ header::after{
 .step-link:hover{
   text-decoration:underline;
 }
+/* === FEATURED LISTINGS: EDITORIAL STYLE UPGRADE === */
+#listings{
+  padding: clamp(48px, 7vw, 78px) 18px;
+  background:
+    radial-gradient(900px 420px at 18% 12%, rgba(21,179,200,.10), transparent 60%),
+    radial-gradient(800px 380px at 82% 18%, rgba(255,111,97,.10), transparent 62%),
+    #fff;
+}
+
+#listings .subtle.center{
+  max-width: 72ch;
+  margin: 0 auto 26px;
+}
+
+.grid.listings{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:22px;
+  margin-top: 30px;
+}
+
+.card.listing{
+  border-radius: 20px;
+  padding: 22px 20px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 16px 44px rgba(0,0,0,.10);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card.listing::before{
+  content:"";
+  position:absolute; inset:-2px;
+  background: linear-gradient(135deg, rgba(21,179,200,.22), rgba(255,111,97,.16));
+  opacity: .0;
+  transition: opacity .18s ease;
+  pointer-events:none;
+}
+
+.card.listing:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 24px 60px rgba(0,0,0,.14);
+  border-color: rgba(0,0,0,.10);
+}
+
+.card.listing:hover::before{
+  opacity: .35;
+}
+
+.listing-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom: 10px;
+}
+
+.card.listing h3{
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.25;
+  letter-spacing: .1px;
+}
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size: .82rem;
+  font-weight: 650;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(21,179,200,.14);
+  border: 1px solid rgba(21,179,200,.22);
+  color: rgba(0,0,0,.78);
+  white-space: nowrap;
+}
+
+.card.listing .muted{
+  margin: 10px 0 12px;
+}
+
+.bullets{
+  margin: 0 0 16px;
+  padding-left: 18px;
+}
+
+.bullets li{
+  margin: 6px 0;
+}
+
+.card.listing .btn{
+  width: 100%;
+  justify-content: center;
+  border-radius: 999px;
+}
+
+/* Make the "featured" investment card stand out (subtle, premium) */
+.card.listing.featured{
+  background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(254,249,240,.92));
+  border: 1px solid rgba(255,111,97,.22);
+}
+
+.card.listing.featured .tag{
+  background: rgba(255,111,97,.14);
+  border-color: rgba(255,111,97,.22);
+}
+
+/* CTA bar under listings: make it feel like a premium prompt */
+#listings .cta-bar{
+  margin-top: 34px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.70);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 18px 54px rgba(0,0,0,.10);
+  padding: 18px 18px;
+}
 
 </style>
    
