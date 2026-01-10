@@ -465,6 +465,48 @@ header::after{
 .card.listing .muted{
   margin-top: 8px;
 }
+/* === HEADER IMAGE POLISH === */
+.header-images{
+  margin-bottom: 18px;
+}
+
+/* Center the headshot visually */
+.header-logo{
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 999px !important;
+  object-fit: cover !important;
+  object-position: 50% 30% !important;
+  border: 4px solid rgba(255,255,255,.85) !important;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.28),
+    0 0 0 6px rgba(255,255,255,.10) !important;
+  background: #fff;
+}
+
+/* Make the RE/MAX badge feel integrated */
+.brand-badge{
+  transform: translateY(2px);
+  box-shadow:
+    0 10px 26px rgba(0,0,0,.22),
+    inset 0 0 0 1px rgba(255,255,255,.18);
+}
+
+/* Reduce logo dominance slightly so Ruby remains the focus */
+.header-brand{
+  width: 40px !important;
+  height: 40px !important;
+  opacity: .95;
+}
+
+/* Gentle entrance feel (no motion unless hovered) */
+.header-images > *{
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.header-images > *:hover{
+  transform: translateY(-2px);
+}
 
 </style>
    
