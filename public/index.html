@@ -559,6 +559,48 @@ header::after{
   margin-left: auto;
   margin-right: auto;
 }
+/* === HERO POLISH & CONTRAST REFINEMENT === */
+.hero-overlay{
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,18,32,.75) 0%,
+      rgba(0,18,32,.55) 45%,
+      rgba(0,18,32,.35) 70%,
+      rgba(0,18,32,.15) 100%
+    );
+}
+
+.hero h1{
+  font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.hero .subhead{
+  max-width: 780px;
+  margin: 0 auto 26px;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: rgba(255,255,255,.92);
+}
+
+.header-images{
+  margin-bottom: 22px;
+  gap: 18px;
+}
+
+.header-logo{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 14px 34px rgba(0,0,0,.35);
+}
+
+.header-brand{
+  background: transparent;
+  box-shadow: none;
+}
 
 </style>
    
