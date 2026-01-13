@@ -667,6 +667,23 @@ header::after{
   background: rgba(255,255,255,.20);
   border-color: rgba(255,255,255,.55);
 }
+/* === SECTION HEADING ACCENTS (SUBTLE TROPICAL) === */
+section h2{
+  position: relative;
+  display: inline-block;
+  margin-bottom: 26px;
+}
+
+section h2::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:4px;
+  margin:12px auto 0;
+  border-radius:999px;
+  background: linear-gradient(135deg, var(--aqua), var(--coral));
+  opacity:.9;
+}
 
 </style>
    
