@@ -750,6 +750,69 @@ section h2::after{
     width: 100%;
   }
 }
+/* === LISTINGS: EDITORIAL TILES (MAGAZINE FEEL) === */
+#listings .grid.listings{
+  gap: 18px;
+}
+
+.card.listing{
+  border-radius: 18px;
+  padding: 22px 22px;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.05);
+  box-shadow: none;
+}
+
+.card.listing::before{
+  opacity: .10;
+}
+
+.card.listing:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(0,0,0,.10);
+}
+
+/* More editorial header line */
+.listing-top{
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.card.listing h3{
+  font-size: 1.15rem;
+  font-weight: 760;
+  letter-spacing: .12px;
+}
+
+/* Tags look like magazine labels */
+.tag{
+  background: rgba(21,179,200,.12);
+  border: 1px solid rgba(21,179,200,.18);
+  color: rgba(0,0,0,.78);
+}
+
+/* Make bullets look like an “editors pick” list */
+.bullets li::before{
+  opacity: .65;
+}
+
+/* Featured tile = a subtle full-width “spotlight” on large screens */
+@media (min-width: 980px){
+  .card.listing.featured{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 18px;
+    align-items: start;
+    padding: 26px 26px;
+    border: 1px solid rgba(255,111,97,.18);
+    background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(254,249,240,.78));
+  }
+  .card.listing.featured .btn{
+    width: fit-content;
+    min-width: 240px;
+  }
+}
 
 </style>
    
