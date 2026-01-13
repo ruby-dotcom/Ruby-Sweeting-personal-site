@@ -684,6 +684,72 @@ section h2::after{
   background: linear-gradient(135deg, var(--aqua), var(--coral));
   opacity:.9;
 }
+/* === LISTINGS MICRO-POLISH (CURATED + PREMIUM) === */
+#listings .grid.listings{
+  gap: 26px;
+}
+
+.card.listing{
+  padding: 28px 24px;
+  border-radius: 22px;
+}
+
+.card.listing h3{
+  font-size: 1.22rem;
+  margin-bottom: 6px;
+}
+
+.tag{
+  font-size: .8rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  letter-spacing: .2px;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Make copy breathe */
+.card.listing .muted{
+  margin: 10px 0 14px;
+}
+
+/* Featured card: spotlight effect, still elegant */
+.card.listing.featured{
+  border: 1px solid rgba(21,179,200,.22);
+  box-shadow: 0 24px 66px rgba(0,0,0,.14);
+}
+
+.card.listing.featured::before{
+  opacity: .22;
+}
+
+/* CTA bar looks like a premium “prompt card” */
+#listings .cta-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
+  padding: 20px 22px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.68);
+}
+
+#listings .cta-bar .btn{
+  min-width: 220px;
+}
+
+@media (max-width: 860px){
+  #listings .cta-bar{
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+  #listings .cta-bar .btn{
+    width: 100%;
+  }
+}
 
 </style>
    
