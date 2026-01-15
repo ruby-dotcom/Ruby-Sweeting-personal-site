@@ -1042,6 +1042,35 @@ section + section{
     padding-bottom: 26px;
   }
 }
+/* === FIX: stop invisible click layers over Featured Now === */
+.featured-now, .featured-now *{
+  position: relative;
+}
+
+.featured-now::before,
+.now-tile::before,
+.featured-now::after,
+.now-tile::after{
+  content: none !important;
+}
+
+.now-tile{
+  isolation: isolate;          /* creates its own stacking context */
+}
+
+.now-tile *{
+  z-index: 1;
+}
+
+.now-actions{
+  z-index: 2;
+}
+
+.now-actions a{
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
+}
 
 </style>
    
