@@ -887,6 +887,77 @@ section h2::after{
 @media (max-width: 860px){
   .featured-now-grid{ grid-template-columns: 1fr; }
 }
+/* === FINAL POLISH: SPACING + CONTRAST (SAFE OVERRIDES) === */
+
+/* Global section rhythm */
+section{
+  padding-top: clamp(48px, 6vw, 78px);
+  padding-bottom: clamp(44px, 6vw, 74px);
+}
+
+/* Make section intros read cleaner */
+.subtle.center{
+  max-width: 72ch;
+  margin: 10px auto 26px;
+  color: rgba(0,0,0,.72);
+}
+
+/* Hero: give content a touch more breathing space */
+.hero .header-content{
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.hero h1{
+  max-width: 26ch;   /* slightly wider = fewer awkward wraps */
+}
+
+.hero .subhead{
+  max-width: 68ch;
+}
+
+/* Featured Now: more contrast + cleaner separation */
+.featured-now{
+  margin-top: 20px;
+  margin-bottom: 34px;
+}
+
+.now-tile{
+  background: rgba(255,255,255,.68);
+  border: 1px solid rgba(0,0,0,.07);
+  box-shadow: 0 16px 46px rgba(0,0,0,.12);
+}
+
+.now-meta{
+  color: rgba(0,0,0,.72);
+}
+
+/* Listings: editorial tiles need slightly stronger contrast */
+.card.listing{
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(0,0,0,.07);
+}
+
+.card.listing .muted{
+  color: rgba(0,0,0,.70);
+}
+
+/* CTA bar in listings: more definition */
+#listings .cta-bar{
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* Small-screen spacing tightening */
+@media (max-width: 860px){
+  section{
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+  .subtle.center{
+    margin-bottom: 18px;
+  }
+}
 
 </style>
    
