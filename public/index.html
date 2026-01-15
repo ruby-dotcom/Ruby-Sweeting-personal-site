@@ -958,6 +958,90 @@ section{
     margin-bottom: 18px;
   }
 }
+/* === FIX PACK: tighter spacing + better structure + remove ghost links === */
+
+/* 1) Reduce section spacing (global) */
+section{
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+/* 2) Add subtle dividers so sections feel separated without huge gaps */
+section + section{
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+
+/* 3) Tighten hero → next section gap */
+.hero{
+  padding-bottom: 26px;
+}
+.hero + section{
+  padding-top: 26px;
+}
+
+/* 4) Narrow wide desktop margins a bit (Mac widescreen fix) */
+.hero .header-content,
+.wrap,
+#listings,
+#about,
+#homeownership{
+  max-width: 1040px;  /* slightly wider than before */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 5) Featured Now: remove any “empty clickable” area */
+.now-tile a.btn{
+  display: inline-flex;
+}
+.now-actions{
+  margin-top: 12px;
+  display: flex;
+}
+.now-actions a{
+  pointer-events: auto;
+}
+.now-tile{
+  overflow: hidden; /* prevents odd click layers */
+}
+
+/* 6) Listings grid balance: make 4 tiles look intentional */
+#listings .grid.listings{
+  gap: 16px;
+}
+@media (min-width: 980px){
+  #listings .grid.listings{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* keep the featured (Investment/Multi-Family) tile full-width for balance */
+  .card.listing.featured{
+    grid-column: 1 / -1;
+  }
+}
+
+/* 7) Tighten spacing around the CTA bar and the next section */
+#listings .cta-bar{
+  margin-top: 18px;
+}
+#listings + section{
+  padding-top: 26px;
+}
+
+/* 8) Fix “5 Steps” numbering visibility (if list markers are clipped) */
+#homeownership ol{
+  padding-left: 1.25rem;
+}
+#homeownership li{
+  margin: 10px 0;
+}
+
+/* Mobile: even tighter spacing */
+@media (max-width: 860px){
+  section{
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+}
 
 </style>
    
