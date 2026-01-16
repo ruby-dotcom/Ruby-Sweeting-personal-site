@@ -1099,6 +1099,68 @@ section + section{
   font-size:.85rem;
   color: rgba(0,0,0,.6);
 }
+/* === 5 STEPS: CLICKABLE GUIDE === */
+.steps-grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 1100px;
+  margin: 18px auto 22px;
+}
+
+.step-card{
+  display:block;
+  padding: 16px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(0,0,0,.07);
+  text-decoration:none;
+  color: inherit;
+  box-shadow: 0 14px 40px rgba(0,0,0,.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.step-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 52px rgba(0,0,0,.12);
+}
+
+.step-num{
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--aqua), var(--coral));
+  margin-bottom: 10px;
+}
+
+.step-body h3{
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+}
+
+.step-body p{
+  margin: 0 0 10px;
+  color: rgba(0,0,0,.72);
+  font-size: .95rem;
+}
+
+.step-link{
+  font-weight: 750;
+  color: rgba(0,0,0,.78);
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .steps-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px){
+  .steps-grid{ grid-template-columns: 1fr; }
+}
 
 </style>
    
@@ -1341,50 +1403,62 @@ section + section{
   <p class="subtle center">
     Whether you’re buying locally or from overseas, here’s a clear, guided path — from your first conversation to closing day.
   </p>
-
-  <div class="steps-grid">
-    <p>
-  Clarify your budget early. Overseas buyers may use international financing or cash, while local buyers often work with Bahamian banks.
-  <br><br>
-  <a href="https://www.majorcay.com/bank" target="_blank" rel="noopener" class="step-link">
-    Start pre-qualification →
+<div class="steps-grid">
+  <a class="step-card" href="#contact">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h3>Pre-Qualification</h3>
+      <p>Confirm budget and financing early so your search is focused and competitive.</p>
+      <span class="step-link">Get pre-qual guidance →</span>
+    </div>
   </a>
-</p>
 
+  <a class="step-card" href="#listings">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h3>Shortlist & Viewings</h3>
+      <p>Ruby curates options across Nassau, Paradise Island, and the Family Islands based on your goals.</p>
+      <span class="step-link">See opportunities →</span>
+    </div>
+  </a>
 
-    <article class="step-card">
-      <span class="step-number">2</span>
-      <h3>Define Your Search</h3>
-      <p>
-        Island, neighborhood, lifestyle, and timeline all matter. Ruby curates options based on what truly fits — not just what’s available.
-      </p>
-    </article>
+  <a class="step-card" href="#contact">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h3>Offer & Negotiation</h3>
+      <p>Structure a clean offer, negotiate terms, and protect your timeline—locally or from overseas.</p>
+      <span class="step-link">Ask about next steps →</span>
+    </div>
+  </a>
 
-    <article class="step-card">
-      <span class="step-number">3</span>
-      <h3>View & Offer</h3>
-      <p>
-        Tour in person or virtually. Once you’ve found “the one,” Ruby guides you through making a strong, informed offer.
-      </p>
-    </article>
+  <a class="step-card" href="#contact">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h3>Due Diligence</h3>
+      <p>Inspection, valuation, and documentation—handled carefully so there are no surprises.</p>
+      <span class="step-link">Plan due diligence →</span>
+    </div>
+  </a>
 
-    <article class="step-card">
-      <span class="step-number">4</span>
-      <h3>Contract & Due Diligence</h3>
-      <p>
-        Attorneys handle conveyance, title checks, and approvals. This protects your investment and ensures a smooth transaction.
-      </p>
-    </article>
+  <a class="step-card" href="#contact">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <h3>Closing</h3>
+      <p>Coordinate attorneys, deposits, and final signing so you close smoothly and confidently.</p>
+      <span class="step-link">Prepare to close →</span>
+    </div>
+  </a>
+</div>
 
-    <article class="step-card">
-      <span class="step-number">5</span>
-      <h3>Closing & Ownership</h3>
-      <p>
-        Funds are transferred, documents are recorded, and the property becomes yours — ready for living, investing, or income.
-      </p>
-    </article>
+<div class="cta-bar">
+  <div>
+    <strong>Want Ruby to guide your next move?</strong>
+    <div class="muted">Tell her your budget, preferred island/area, and timeline — she’ll send a curated shortlist.</div>
   </div>
+  <a class="btn btn-primary" href="#contact">Get Started</a>
+</div>
 
+ 
   <div class="cta-bar">
     <div>
       <strong>Not sure where to start?</strong>
@@ -1393,7 +1467,6 @@ section + section{
     <a class="btn btn-primary" href="#contact">Get Guidance</a>
   </div>
 </section>
-
 
     <section id="testimonials">
       <h2>Client Testimonials</h2>
