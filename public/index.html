@@ -1071,6 +1071,21 @@ section + section{
   z-index: 3;
   pointer-events: auto;
 }
+/* === FIX: stop “ghost clicks” / double opens in Featured Now === */
+.featured-now-grid,
+.featured-now-grid *{
+  pointer-events: none;   /* nothing clickable by default */
+}
+
+.featured-now-grid .now-actions,
+.featured-now-grid .now-actions a{
+  pointer-events: auto;   /* ONLY the buttons are clickable */
+}
+
+.featured-now-grid .now-actions a{
+  position: relative;
+  z-index: 10;
+}
 
 </style>
    
