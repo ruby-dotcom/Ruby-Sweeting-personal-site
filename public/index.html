@@ -1234,6 +1234,64 @@ section + section{
   filter: brightness(1.04) contrast(1.03);
   transform: translateY(-1px);
 }
+/* === PREMIUM WOW: subtle shimmer + floating light (hero only) === */
+.hero{
+  position: relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:
+    radial-gradient(900px 520px at 12% 18%, rgba(255,255,255,.16), transparent 60%),
+    radial-gradient(700px 420px at 92% 78%, rgba(255,255,255,.10), transparent 62%),
+    conic-gradient(from 160deg, rgba(21,179,200,.10), rgba(255,111,97,.08), rgba(21,179,200,.10));
+  mix-blend-mode: overlay;
+  opacity: .65;
+  pointer-events:none;
+  animation: heroFloat 14s ease-in-out infinite;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg,
+    transparent 0%,
+    rgba(255,255,255,.14) 18%,
+    transparent 38%,
+    transparent 62%,
+    rgba(255,255,255,.10) 78%,
+    transparent 100%);
+  opacity:.35;
+  pointer-events:none;
+  transform: translateX(-22%);
+  animation: heroSheen 9.5s ease-in-out infinite;
+}
+
+/* Keep content above effects */
+.hero .header-content{
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes heroFloat{
+  0%   { transform: translate3d(-1.5%, -1.0%, 0) rotate(-1deg); }
+  50%  { transform: translate3d( 1.8%,  1.2%, 0) rotate( 1deg); }
+  100% { transform: translate3d(-1.5%, -1.0%, 0) rotate(-1deg); }
+}
+
+@keyframes heroSheen{
+  0%   { transform: translateX(-28%); }
+  50%  { transform: translateX(18%); }
+  100% { transform: translateX(-28%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .hero::before, .hero::after{ animation: none; }
+}
 
 </style>
    
