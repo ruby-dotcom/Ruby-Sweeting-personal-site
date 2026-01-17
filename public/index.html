@@ -1161,6 +1161,79 @@ section + section{
 @media (max-width: 620px){
   .steps-grid{ grid-template-columns: 1fr; }
 }
+/* === HERO WOW POLISH PACK (SAFE OVERRIDES) === */
+
+/* 1) Reduce the “gray/sand” feel by strengthening hero overlay + color */
+.hero-overlay{
+  background:
+    radial-gradient(900px 520px at 18% 18%, rgba(0,0,0,.28), transparent 58%),
+    linear-gradient(110deg, rgba(0,28,55,.72), rgba(0,28,55,.28) 55%, rgba(0,0,0,.10));
+}
+
+/* 2) Tighten hero typography + spacing */
+.hero h1{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.08;
+}
+
+.hero .subhead{
+  margin-top: 0;
+  margin-bottom: 18px;
+  line-height: 1.45;
+}
+
+/* 3) Header images: center + polish headshot, remove “paper square” on logo */
+.header-images{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 18px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.brand-badge{
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.header-brand{
+  background: transparent !important;
+  border-radius: 14px;
+  padding: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.22));
+  max-height: 74px;
+  width: auto;
+}
+
+/* Headshot: consistent sizing + exposure polish */
+.header-logo{
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  object-position: 50% 35%;  /* slightly higher = more face/less chest */
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.55);
+  box-shadow: 0 18px 46px rgba(0,0,0,.30);
+  filter: brightness(1.06) contrast(1.06) saturate(1.04);
+}
+
+/* 4) Make the “glass” CTA match the primary gradient (still secondary via opacity) */
+.btn-outline{
+  background: linear-gradient(135deg, rgba(21,179,200,.92), rgba(255,111,97,.92));
+  border: 0;
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+}
+
+.btn-outline:hover{
+  filter: brightness(1.04) contrast(1.03);
+  transform: translateY(-1px);
+}
 
 </style>
    
