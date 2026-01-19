@@ -1292,6 +1292,57 @@ section + section{
 @media (prefers-reduced-motion: reduce){
   .hero::before, .hero::after{ animation: none; }
 }
+/* === MODAL (Steps Pop-ups) === */
+.modal{ display:none; }
+.modal.is-open{ display:block; }
+
+.modal-backdrop{
+  position:fixed; inset:0;
+  background: rgba(0,0,0,.55);
+  z-index: 999;
+}
+
+.modal-dialog{
+  position:fixed;
+  left:50%; top:50%;
+  transform: translate(-50%,-50%);
+  width: min(720px, calc(100vw - 34px));
+  max-height: calc(100vh - 80px);
+  overflow:auto;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 22px;
+  box-shadow: 0 30px 90px rgba(0,0,0,.28);
+  padding: 18px 18px 16px;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.modal-close{
+  position:absolute;
+  top: 10px; right: 12px;
+  border:0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor:pointer;
+  opacity:.75;
+}
+.modal-close:hover{ opacity:1; }
+
+.modal-body{ margin-top: 10px; }
+.modal-actions{
+  display:flex;
+  gap: 12px;
+  justify-content:flex-end;
+  margin-top: 14px;
+}
+.modal-actions .btn{ min-width: 160px; }
+@media (max-width: 620px){
+  .modal-actions{ flex-direction: column; }
+  .modal-actions .btn{ width: 100%; }
+}
 
 </style>
    
@@ -1547,7 +1598,7 @@ section + section{
     </div>
   </a>
 
-  <a class="step-card" href="#listings">
+  <a class="step-card" href="#" data-step="2">
     <div class="step-num">2</div>
     <div class="step-body">
       <h3>Shortlist & Viewings</h3>
@@ -1556,7 +1607,7 @@ section + section{
     </div>
   </a>
 
-  <a class="step-card" href="#contact">
+  <a class="step-card" href="#" data-step="3">
     <div class="step-num">3</div>
     <div class="step-body">
       <h3>Offer & Negotiation</h3>
@@ -1565,7 +1616,7 @@ section + section{
     </div>
   </a>
 
-  <a class="step-card" href="#contact">
+  <a class="step-card" href="#" data-step="4">
     <div class="step-num">4</div>
     <div class="step-body">
       <h3>Due Diligence</h3>
@@ -1574,7 +1625,7 @@ section + section{
     </div>
   </a>
 
-  <a class="step-card" href="#contact">
+  <a class="step-card" href="#" data-step="5">
     <div class="step-num">5</div>
     <div class="step-body">
       <h3>Closing</h3>
@@ -1648,3 +1699,111 @@ section + section{
   </footer>
 </body>
 </html>
+<!-- === Steps Modal (Pop-up Instructions) === -->
+<div id="stepsModal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close="true"></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" type="button" data-close="true" aria-label="Close">×</button>
+    <h3 id="modalTitle">Step</h3>
+    <div id="modalBody" class="modal-body"></div>
+    <div class="modal-actions">
+      <a id="modalPrimary" class="btn btn-primary" href="#contact">Message Ruby</a>
+      <button class="btn btn-outline" type="button" data-close="true">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const modal = document.getElementById('stepsModal');
+  const titleEl = document.getElementById('modalTitle');
+  const bodyEl = document.getElementById('modalBody');
+  const primaryEl = document.getElementById('modalPrimary');
+
+  function openModal({ title, body, primaryText, primaryHref, newTab }) {
+    titleEl.textContent = title;
+    bodyEl.innerHTML = body;
+    primaryEl.textContent = primaryText || 'Message Ruby';
+    primaryEl.setAttribute('href', primaryHref || '#contact');
+    if (newTab) {
+      primaryEl.setAttribute('target', '_blank');
+      primaryEl.setAttribute('rel', 'noopener');
+    } else {
+      primaryEl.removeAttribute('target');
+      primaryEl.removeAttribute('rel');
+    }
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-step]');
+    if (btn) {
+      e.preventDefault();
+      const step = btn.getAttribute('data-step');
+
+      const steps = {
+        "1": {
+          title: "Step 1 — Pre-Qualification",
+          body:
+            "<p><strong>Goal:</strong> Confirm your borrowing range and monthly comfort level.</p>" +
+            "<ul class='bullets'><li>Connect with a banker to review income/expenses</li><li>Understand required deposit & estimated closing costs</li><li>Get a clear budget range before viewing homes</li></ul>" +
+            "<p class='muted'>Ruby can connect you with efficient lenders in her network.</p>",
+          primaryText: "Start pre-qualification",
+          primaryHref: "https://www.majorcay.com/bank",
+          newTab: true
+        },
+        "2": {
+          title: "Step 2 — Shortlist & Viewings",
+          body:
+            "<p><strong>Goal:</strong> Narrow to the best options quickly—especially if you’re overseas.</p>" +
+            "<ul class='bullets'><li>Define must-haves: island/area, beds/baths, lifestyle priorities</li><li>Ruby sends a curated shortlist (IDX/BMLS where available)</li><li>Schedule viewings or virtual tours</li></ul>",
+          primaryText: "Request a curated shortlist",
+          primaryHref: "#contact",
+          newTab: false
+        },
+        "3": {
+          title: "Step 3 — Offer & Negotiation",
+          body:
+            "<p><strong>Goal:</strong> Submit a clean offer with the right protections.</p>" +
+            "<ul class='bullets'><li>Agree price, deposit, and timeline</li><li>Negotiate items like appliances/furnishings (if applicable)</li><li>Coordinate with attorneys and keep deadlines on track</li></ul>",
+          primaryText: "Talk offer strategy",
+          primaryHref: "#contact",
+          newTab: false
+        },
+        "4": {
+          title: "Step 4 — Due Diligence",
+          body:
+            "<p><strong>Goal:</strong> Confirm the property is exactly what you expect.</p>" +
+            "<ul class='bullets'><li>Inspection/condition checks</li><li>Title & document review with your attorney</li><li>Finalize financing requirements and insurance</li></ul>",
+          primaryText: "Plan due diligence",
+          primaryHref: "#contact",
+          newTab: false
+        },
+        "5": {
+          title: "Step 5 — Closing",
+          body:
+            "<p><strong>Goal:</strong> Smooth signing and handover.</p>" +
+            "<ul class='bullets'><li>Finalize documents, deposits, and utility transfers</li><li>Complete signing (local or remote, where applicable)</li><li>Keys, handover, and next steps for ownership</li></ul>",
+          primaryText: "Prepare for closing",
+          primaryHref: "#contact",
+          newTab: false
+        }
+      };
+
+      openModal(steps[step] || { title: "Step", body: "<p>Details coming soon.</p>" });
+    }
+
+    if (e.target.closest('[data-close="true"]')) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+})();
+</script>
