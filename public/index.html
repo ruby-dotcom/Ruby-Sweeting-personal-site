@@ -1380,6 +1380,28 @@ header + main > section:first-child{
 .cta-bar .btn{
   min-width: 200px;
 }
+/* === TESTIMONIAL CARDS FIX === */
+#testimonials .grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+#testimonials .card{
+  background: #ffffff;
+  padding: 22px 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  font-size: 0.95rem;
+}
+
+#testimonials .card em{
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 600;
+  color: rgba(0,0,0,.65);
+}
 
 </style>
    
