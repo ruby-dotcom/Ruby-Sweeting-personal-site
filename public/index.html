@@ -1343,6 +1343,43 @@ section + section{
   .modal-actions{ flex-direction: column; }
   .modal-actions .btn{ width: 100%; }
 }
+/* === FINAL SPACING TUNE === */
+main > section{
+  padding-top: clamp(44px, 6vw, 64px);
+  padding-bottom: clamp(44px, 6vw, 64px);
+}
+
+/* Reduce gap after hero */
+header + main > section:first-child{
+  padding-top: clamp(36px, 5vw, 52px);
+}
+
+/* Slight separation emphasis for key sections */
+#why, #fib, #listings, #steps{
+  border-top: 1px solid rgba(0,0,0,.05);
+}
+/* === FEATURED LISTINGS BALANCE === */
+#listings .now-tile{
+  padding: 22px 22px 20px;
+}
+
+#listings .now-meta{
+  margin-bottom: 10px;
+}
+
+#listings .muted{
+  margin-bottom: 14px;
+}
+/* === CTA VISIBILITY POLISH === */
+.cta-bar{
+  margin-top: 28px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.cta-bar .btn{
+  min-width: 200px;
+}
 
 </style>
    
