@@ -1433,6 +1433,30 @@ header + main > section:first-child{
   font-size: 0.98rem;
   line-height: 1.45;
 }
+/* === Lifestyle photos: spacing + balance fix === */
+.lifestyle-break{
+  margin: 10px auto 14px !important;
+  padding: 0 18px;
+  max-width: 1100px;
+}
+
+.lifestyle-break img{
+  margin: 0;
+}
+
+.lifestyle-caption{
+  margin: 8px auto 0;
+}
+
+/* Reduce vertical gaps between major sections */
+section{
+  margin-bottom: 36px;
+}
+
+#fib + .lifestyle-break,
+#steps + .lifestyle-break{
+  margin-top: 6px !important;
+}
 
 </style>
    
