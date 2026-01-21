@@ -1402,6 +1402,37 @@ header + main > section:first-child{
   font-weight: 600;
   color: rgba(0,0,0,.65);
 }
+/* === VISUAL LIFESTYLE ENHANCEMENT (SOFT) === */
+.photo-break{
+  padding: 20px 18px 10px;
+}
+
+.photo-figure{
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.06);
+  background: rgba(255,255,255,.55);
+  box-shadow: 0 18px 52px rgba(0,0,0,.12);
+}
+
+.photo-figure img{
+  width: 100%;
+  height: clamp(240px, 38vw, 420px);
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05) contrast(1.05);
+  transform: scale(1.01);
+}
+
+.photo-figure figcaption{
+  padding: 14px 16px 16px;
+  text-align: center;
+  color: rgba(0,0,0,.72);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
 
 </style>
    
@@ -1488,6 +1519,15 @@ header + main > section:first-child{
         and shortlist properties that fit budget, lifestyle, and investment goals — while also supporting Bahamian residents looking to buy, sell, or upgrade.
       </p>
     </section>
+<!-- === Lifestyle Photo Break 1 === -->
+<section class="photo-break" aria-label="Bahamian lifestyle">
+  <figure class="photo-figure">
+    <img src="PHOTO-REPLACE-1.jpeg" alt="Bahamian lifestyle and coastal living" loading="lazy">
+    <figcaption>
+      Coastal living, community, and everyday beauty — the Bahamas lifestyle buyers fall in love with.
+    </figcaption>
+  </figure>
+</section>
 
     <p class="muted center">
   Ruby regularly works with overseas clients, coordinating bankers, attorneys, inspections, and closings —
@@ -1614,6 +1654,15 @@ header + main > section:first-child{
 
     <a class="btn btn-primary" href="#contact">Get Guidance</a>
   </div>
+</section>
+<!-- === Lifestyle Photo Break 2 === -->
+<section class="photo-break" aria-label="Island community and investment">
+  <figure class="photo-figure">
+    <img src="PHOTO-REPLACE-2.jpeg" alt="Island community and investment-friendly living" loading="lazy">
+    <figcaption>
+      Whether you’re relocating, investing, or buying your second home — Ruby helps you match the right property to the right life.
+    </figcaption>
+  </figure>
 </section>
 
     <section id="testimonials" class="steps">
