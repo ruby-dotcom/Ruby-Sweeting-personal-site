@@ -1487,6 +1487,45 @@ h2{ margin: 0 0 10px; }
 .subtle.center{ margin: 0 auto 16px; max-width: 900px; }
 #listings h2{ margin-bottom: 8px; }
 #steps h2{ margin-bottom: 8px; }
+/* === Testimonials: step-style cards in one row === */
+.testimonials-row{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.t-card{
+  display:block;
+  text-decoration:none;
+  border-radius: 18px;
+  padding: 18px 16px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 12px 34px rgba(0,0,0,.10);
+  border: 1px solid rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.t-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 48px rgba(0,0,0,.14);
+}
+
+.t-quote{
+  margin: 0 0 10px;
+  color: rgba(0,0,0,.80);
+  line-height: 1.55;
+}
+
+.t-name{
+  margin: 0;
+  font-weight: 700;
+  color: rgba(0,0,0,.70);
+}
+
+@media (max-width: 900px){
+  .testimonials-row{ grid-template-columns: 1fr; }
+}
 
 </style>
    
@@ -1728,39 +1767,31 @@ h2{ margin: 0 0 10px; }
   </p>
 </section>
 
-    <section id="testimonials" class="steps">
+    <section id="testimonials">
   <h2>Client Testimonials</h2>
-  <p class="subtle center">A few words from clients Ruby has supported through sales, rentals, and closings.</p>
 
-  <div class="steps-grid">
-    <a class="step-card" href="#contact">
-      <div class="step-num">★</div>
-      <div class="step-body">
-        <h3>Kayla Saunders</h3>
-        <p>“Professional, knowledgeable, and personable. Highly recommended.”</p>
-        <span class="step-link">Contact Ruby →</span>
-      </div>
+  <div class="testimonials-row">
+    <a class="t-card" href="#contact" aria-label="Testimonial from Kayla Saunders">
+      <p class="t-quote">“Professional, knowledgeable, and personable. Highly recommended!”</p>
+      <p class="t-name">— Kayla Saunders</p>
     </a>
 
-    <a class="step-card" href="#contact">
-      <div class="step-num">★</div>
-      <div class="step-body">
-        <h3>Julius &amp; Deon Darling</h3>
-        <p>“Sharp instincts, knowledgeable guidance, a kind heart, and a true understanding of Bahamian business.”</p>
-        <span class="step-link">Contact Ruby →</span>
-      </div>
+    <a class="t-card" href="#contact" aria-label="Testimonial from Julius & Deon Darling">
+      <p class="t-quote">“Sharp instincts, knowledgeable, kind heart, and a true understanding of Bahamian business.”</p>
+      <p class="t-name">— Julius &amp; Deon Darling</p>
     </a>
 
-    <a class="step-card" href="#contact">
-      <div class="step-num">★</div>
-      <div class="step-body">
-        <h3>KB</h3>
-        <p>“Detail oriented — nothing gets overlooked or left to chance. Ms. Sweeting is attentive and helpful.”</p>
-        <span class="step-link">Contact Ruby →</span>
-      </div>
+    <a class="t-card" href="#contact" aria-label="Testimonial from KB">
+      <p class="t-quote">“Detail oriented — nothing gets overlooked or left to chance. Ms. Sweeting is attentive and helpful.”</p>
+      <p class="t-name">— KB</p>
     </a>
   </div>
+
+  <p class="subtle center" style="margin-top:12px;">
+    Want a similar experience? <a href="#contact">Message Ruby</a> — she’ll respond personally.
+  </p>
 </section>
+
 
     <section id="contact">
       <h2>Contact Ruby</h2>
