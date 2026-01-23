@@ -1539,6 +1539,63 @@ section h2{
 .subtle.center{
   margin-bottom: 18px;
 }
+/* === Contact / CTA Form: restore polish + mobile-friendly === */
+#contact{
+  scroll-margin-top: 90px;
+}
+
+#contact .subtle.center{
+  max-width: 950px;
+}
+
+#contact form{
+  max-width: 760px;
+  margin: 18px auto 0;
+  padding: 18px 16px;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.10);
+}
+
+#contact label{
+  display:block;
+  font-weight: 700;
+  margin: 12px 0 6px;
+}
+
+#contact input,
+#contact textarea{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.18);
+  background: rgba(255,255,255,.95);
+  font-size: 16px; /* prevents iPhone zoom */
+  outline: none;
+}
+
+#contact textarea{
+  resize: vertical;
+  min-height: 120px;
+}
+
+#contact input:focus,
+#contact textarea:focus{
+  border-color: rgba(21,179,200,.75);
+  box-shadow: 0 0 0 4px rgba(21,179,200,.18);
+}
+
+#contact button.btn{
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+/* Social link row spacing */
+#contact a{ text-decoration: none; }
+#contact a:hover{ text-decoration: underline; }
 
 </style>
    
