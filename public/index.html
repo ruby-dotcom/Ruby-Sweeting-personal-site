@@ -2019,8 +2019,9 @@ section h2{
 </script>
 <script>
 (function () {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('sent') === '1') {
+  const qs = window.location.search || (window.location.hash.includes('?') ? window.location.hash.split('?')[1] : '');
+const params = new URLSearchParams(qs);
+if (params.get('sent') === '1') {
     const contact = document.querySelector('#contact');
     if (!contact) return;
 
