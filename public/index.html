@@ -2085,6 +2085,24 @@ if (params.get('sent') === '1') {
   }
 })();
 </script>
+<!-- === IDX Listing Modal === -->
+<div id="idxModal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-idx="true"></div>
+  <div class="modal-dialog modal-wide" role="dialog" aria-modal="true">
+    <button class="modal-close" type="button" data-close-idx="true" aria-label="Close">×</button>
+
+    <iframe
+      id="idxFrame"
+      src=""
+      loading="lazy"
+      style="width:100%; height:80vh; border:none; border-radius:12px;">
+    </iframe>
+
+    <p class="muted center" style="margin-top:10px;">
+      Listing details provided via our brokerage IDX. Availability and pricing subject to change.
+    </p>
+  </div>
+</div>
 
 </body>
 </html>
