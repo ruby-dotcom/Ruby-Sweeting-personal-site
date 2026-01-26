@@ -2061,6 +2061,36 @@ section h2{
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
+   // === IDX Modal (embedded listing view) ===
+  const idxModal = document.getElementById('idxModal');
+  const idxFrame = document.getElementById('idxFrame');
+
+  function openIdx(url){
+    if (!idxModal || !idxFrame) return;
+    idxFrame.src = url;
+    idxModal.classList.add('is-open');
+    idxModal.setAttribute('aria-hidden','false');
+  }
+  function closeIdx(){
+    if (!idxModal || !idxFrame) return;
+    idxModal.classList.remove('is-open');
+    idxModal.setAttribute('aria-hidden','true');
+    idxFrame.src = '';
+  }
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-idx]');
+    if (btn) {
+      e.preventDefault();
+      openIdx(btn.getAttribute('data-idx'));
+      return;
+    }
+    if (e.target.closest('[data-close-idx="true"]')) closeIdx();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && idxModal && idxModal.classList.contains('is-open')) closeIdx();
+  }); 
 })();
 </script>
 <script>
