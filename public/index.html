@@ -1751,11 +1751,11 @@ section h2{
         Enjoy resort-style income potential with professional management, plus up to 90 days of personal use per year and access to Atlantis’ beaches, pools, dining, casino, gym, and water park.
       </p>
       <div class="now-actions">
-        <a class="btn btn-outline"
-           href="https://listings.1oakbahamas.com/listing/2umnd?g=215"
-           target="_blank" rel="noopener">View MLS 60823 (IDX)</a>
-      </div>
-    </article>
+  <button class="btn btn-outline" type="button"
+    data-idx="https://listings.1oakbahamas.com/listing/2umnd?g=215">
+    See photos & details
+  </button>
+</div>
 
     <!-- Listing 2 -->
     <article class="now-tile">
@@ -1768,11 +1768,11 @@ section h2{
         Sold unfurnished, it’s an excellent option for residents or investors seeking a secure Nassau location with long-term value and flexibility to personalize.
       </p>
       <div class="now-actions">
-        <a class="btn btn-outline"
-           href="https://listings.1oakbahamas.com/listing/31oyp#!gallerys"
-           target="_blank" rel="noopener">View MLS 63693 (IDX)</a>
-      </div>
-    </article>
+  <button class="btn btn-outline" type="button"
+    data-idx="https://listings.1oakbahamas.com/listing/31oyp#!gallerys">
+    See photos & details
+  </button>
+</div>
   </div>
 
   <p class="subtle center">
@@ -1935,6 +1935,24 @@ section h2{
 <footer>
   © 2025 Ruby Lee Sweeting
 </footer>
+      <!-- === IDX Modal (Embedded Listing View) === -->
+<div id="idxModal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-idx="true"></div>
+  <div class="modal-dialog idx-dialog" role="dialog" aria-modal="true" aria-labelledby="idxTitle">
+    <button class="modal-close" type="button" data-close-idx="true" aria-label="Close">×</button>
+    <h3 id="idxTitle">Listing Photos & Details</h3>
+
+    <div class="idx-frame-wrap">
+      <iframe id="idxFrame" title="IDX listing" loading="lazy"></iframe>
+    </div>
+
+    <div class="modal-actions">
+      <a class="btn btn-primary" href="#contact">Message Ruby</a>
+      <button class="btn btn-outline" type="button" data-close-idx="true">Close</button>
+    </div>
+  </div>
+</div>
+
 
 
   <!-- === Steps Modal (Pop-up Instructions) === -->
