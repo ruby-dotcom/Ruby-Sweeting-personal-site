@@ -1639,6 +1639,14 @@ section h2{
     grid-template-columns: 1fr;
   }
 }
+/* Force side-by-side Featured Listings on desktop */
+@media (min-width: 900px) {
+  .featured-now-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
 
 </style>
    
