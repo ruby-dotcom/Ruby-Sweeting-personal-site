@@ -1596,6 +1596,26 @@ section h2{
 /* Social link row spacing */
 #contact a{ text-decoration: none; }
 #contact a:hover{ text-decoration: underline; }
+/* IDX listing snapshot layout */
+.now-tile {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  column-gap: 16px;
+  align-items: start;
+}
+
+.now-snapshot {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Stack image above text on small screens */
+@media (max-width: 640px) {
+  .now-tile {
+    grid-template-columns: 1fr;
+  }
+}
 
 </style>
    
