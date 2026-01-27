@@ -1626,6 +1626,19 @@ section h2{
   margin: 12px auto 14px auto; /* centers image */
   border-radius: 6px;
 }
+/* Featured Listings: place tiles side-by-side on desktop */
+.featured-now-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Stack listings on small screens */
+@media (max-width: 768px) {
+  .featured-now-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 </style>
    
