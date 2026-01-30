@@ -1959,6 +1959,32 @@ h3 + .featured-now-grid {
 #contact form .btn {
   margin-top: 12px;
 }
+/* FINAL contact form layout correction — force vertical stacking */
+#contact form * {
+  box-sizing: border-box;
+}
+
+#contact form {
+  display: block;
+}
+
+#contact form > * {
+  display: block !important;
+  width: 100% !important;
+  margin-bottom: 16px;
+}
+
+#contact form input,
+#contact form textarea,
+#contact form select {
+  display: block !important;
+  width: 100% !important;
+}
+
+#contact form button {
+  width: auto;
+  margin-top: 8px;
+}
 
 </style>
    
