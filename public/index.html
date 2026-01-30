@@ -1833,6 +1833,55 @@ h3 + .featured-now,
 h3 + .featured-now-grid {
   margin-top: 8px;
 }
+/* Phase 3B – Targeted section spacing corrections */
+
+/* 1. Tighten related informational sections */
+#about,
+#why-work-with-ruby,
+#international-buyers {
+  margin-bottom: 36px;
+}
+
+/* Reduce top margin when these sections follow another section */
+#why-work-with-ruby,
+#international-buyers {
+  margin-top: -16px;
+}
+
+/* 2. Narrative text → lifestyle image connection */
+.lifestyle-break {
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+/* Make the second lifestyle image feel slightly more present */
+.lifestyle-break + .lifestyle-break img {
+  max-height: 460px; /* modest increase, still editorial */
+}
+
+/* 3. Featured Now → Five Steps transition */
+#five-steps {
+  margin-top: 32px;
+}
+
+/* Reduce gap after Featured Now listings */
+.featured-now-grid {
+  margin-bottom: 28px;
+}
+
+/* 4. Conversion stack: Get Started → Testimonials → Contact */
+.cta-bar {
+  margin-bottom: 32px;
+}
+
+#testimonials {
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+#contact {
+  margin-top: 32px;
+}
 
 </style>
    
