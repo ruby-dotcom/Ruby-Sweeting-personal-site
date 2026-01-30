@@ -1808,6 +1808,31 @@ section h2{
   background-color: #3fb7c4;
   color: #ffffff;
 }
+/* Phase 3B – Heading spacing & section rhythm */
+
+/* Main section headings */
+h2 {
+  margin-top: 56px;        /* clear section separation */
+  margin-bottom: 16px;    /* tighter link to content */
+}
+
+/* Subsection headings */
+h3 {
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+/* First heading on the page should not push down */
+section:first-of-type h2 {
+  margin-top: 0;
+}
+
+/* Headings followed by grids or cards */
+h2 + .visual-listings,
+h3 + .featured-now,
+h3 + .featured-now-grid {
+  margin-top: 8px;
+}
 
 </style>
    
