@@ -2422,19 +2422,24 @@ h3 + .featured-now-grid {
         <p style="display:none;">
   <label>Don’t fill this out: <input name="bot-field" /></label>
 </p>
-        <label>Your Name</label>
-        <input type="text" name="name" required />
+<div class="form-field">
+  <label>Your Name</label>
+  <input type="text" name="name" required />
+</div>
 
-        <label>Email</label>
-        <input type="email" name="email" required />
+<div class="form-field">
+  <label>Email</label>
+  <input type="email" name="email" required />
+</div>
 
-        <label>Message</label>
-        <textarea name="message" rows="5" required></textarea>
+<div class="form-field">
+  <label>Message</label>
+  <textarea name="message" rows="5" required></textarea>
+</div>
 
-        <button class="btn btn-primary" type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+<div class="form-actions">
+  <button class="btn btn-primary" type="submit">Send Message</button>
+</div>
 
     <footer> 
 <p class="subtle center" style="font-size:13px; opacity:.7;">
