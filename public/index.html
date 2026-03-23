@@ -2513,7 +2513,7 @@ a.btn:focus-visible {
 </p>
 
 <p class="footer-copy subtle center">
-  © 2025 Ruby Lee Sweeting
+ © <span id="year"></span> Ruby Lee Sweeting
 </p>
 
 
@@ -2715,6 +2715,8 @@ if (params.get('sent') === '1') {
     </p>
   </div>
 </div>
-
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
