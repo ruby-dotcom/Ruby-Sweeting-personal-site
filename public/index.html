@@ -2249,6 +2249,71 @@ a.btn:focus-visible {
   text-decoration: none;
   border-radius: 4px;
 }   
+    /* ===== Consultation Section ===== */
+
+.consultation{
+  background:#f8fbfc;
+  padding:70px 30px;
+  border-top:1px solid #e8eef0;
+  border-bottom:1px solid #e8eef0;
+}
+
+.consultation-card{
+  max-width:950px;
+  margin:40px auto 0;
+  background:#fff;
+  border-radius:18px;
+  padding:40px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.consultation-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.consultation-benefits h3{
+  margin-top:0;
+}
+
+.consultation-benefits ul{
+  list-style:none;
+  padding:0;
+  margin:25px 0 0;
+}
+
+.consultation-benefits li{
+  margin:16px 0;
+  font-size:1.05rem;
+}
+
+.consultation-actions{
+  text-align:center;
+}
+
+.consultation-actions .btn{
+  width:100%;
+  margin-bottom:18px;
+}
+
+@media (max-width:768px){
+
+.consultation{
+  padding:55px 20px;
+}
+
+.consultation-card{
+  padding:28px;
+}
+
+.consultation-grid{
+  grid-template-columns:1fr;
+  gap:35px;
+}
+
+}
 </style>
    
     <header class="hero" role="banner">
@@ -2720,6 +2785,56 @@ Every property is different. Every client is different. <strong>Every recommenda
     </a>
   </div>
 </div>
+      <section id="consultation" class="consultation">
+
+  <div class="section-header">
+    <h2>Let's Start the Conversation</h2>
+
+    <p class="subtle center">
+      Whether you're buying, selling, investing, or simply exploring your options, I'd love to learn more about your goals. Complete this short form and I'll personally review your information before recommending the next step.
+    </p>
+  </div>
+
+  <div class="consultation-card">
+
+    <div class="consultation-grid">
+
+      <div class="consultation-benefits">
+
+        <h3>What happens next?</h3>
+
+        <ul>
+          <li>✓ Your inquiry comes directly to Ruby.</li>
+          <li>✓ You'll receive a personal response.</li>
+          <li>✓ Recommendations are tailored to your goals.</li>
+          <li>✓ No obligation. No pressure.</li>
+        </ul>
+
+      </div>
+
+      <div class="consultation-actions">
+
+        <a class="btn btn-primary" href="#contact">
+          Start My Consultation
+        </a>
+
+        <p class="center subtle">
+          Prefer WhatsApp?
+        </p>
+
+        <a class="btn btn-secondary"
+           href="https://wa.me/12428283201"
+           target="_blank">
+          Chat with Ruby on WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 <section id="contact">
  <p class="contact-nudge">
   Whether you're ready to move forward or just need clarity, you're welcome to reach out — I’m happy to help you think it through.
