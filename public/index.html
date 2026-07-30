@@ -2248,7 +2248,77 @@ a.btn:focus-visible {
   padding: 10px 16px;
   text-decoration: none;
   border-radius: 4px;
-}   
+} 
+    /* ===== Authority Strip ===== */
+
+.authority-strip{
+  max-width:1100px;
+  margin:50px auto 60px;
+  padding:0 24px;
+}
+
+.authority-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.authority-card{
+  background:#fff;
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+
+.authority-card h3{
+  margin-top:0;
+  color:var(--aqua);
+}
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+height:100%;
+.authority-card p{
+  margin-bottom:0;
+  color:#444;
+  line-height:1.7;
+}
+
+.authority-testimonial{
+    max-width:760px;
+    margin:42px auto 0;
+    background:#ffffff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.authority-testimonial-text{
+    font-size:1.08rem;
+    line-height:1.8;
+    font-style:italic;
+    color:#444;
+    margin:0;
+}
+
+.authority-testimonial-name{
+    margin-top:18px;
+    font-weight:700;
+    color:var(--aqua);
+}
+@media (max-width:900px){
+
+  .authority-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .authority-strip{
+    margin:40px auto;
+  }
+
+}
     /* ===== Consultation Section ===== */
 
 .consultation{
@@ -2381,26 +2451,47 @@ Every property is different. Every client is different. <strong>Every recommenda
     </div>
   </div>
 </header>
- <p class="authority-line">
-  Guiding Nassau buyers through real, well-priced opportunities
-</p>
-<p class="authority-line">
-  Focused on practical decisions — not pressure or sales tactics
-</p>
-<p class="authority-line">
-  Clear advice, steady support, and a process you can trust
-</p>
- <p class="market-context">
-  Navigating Nassau’s evolving market with a focus on value, timing, and long-term fit.
-</p>
-<div class="testimonial-highlight">
-  <p class="testimonial-text">
-    “Detail-oriented — nothing gets overlooked or left to chance. Ruby was attentive, helpful, and made the process feel manageable from start to finish.”
+
+<section class="authority-strip">
+
+  <div class="authority-grid">
+
+  <div class="authority-card">
+    <h3>Local Market Knowledge</h3>
+    <p>
+      More than 16 years of experience helping buyers understand the Nassau market, identify genuine opportunities, and avoid costly mistakes.
+    </p>
+  </div>
+
+  <div class="authority-card">
+    <h3>Advice You Can Trust</h3>
+    <p>
+      Every recommendation is tailored to your goals, budget, and timeline—not pressure to make a quick decision.
+    </p>
+  </div>
+
+  <div class="authority-card">
+    <h3>Personal Service</h3>
+    <p>
+      From your first consultation through negotiations, closing, and beyond, you'll work directly with Ruby—not a team member or assistant.
+    </p>
+  </div>
+
+</div>
+
+<div class="authority-testimonial">
+
+  <p class="authority-testimonial-text">
+    “Detail-oriented — nothing gets overlooked or left to chance. Ruby made the process feel manageable from start to finish.”
   </p>
-  <p class="testimonial-name">
-    — First-time buyer, Nassau
+
+  <p class="authority-testimonial-name">
+    — First-Time Buyer, Nassau
   </p>
-</div> 
+
+</div>
+
+</section>
 <section class="lifestyle">
   <img src="PHOTO-2025-10-31-23-32-33.jpeg" alt="Bahamian lifestyle and coastal living">
 </section>
