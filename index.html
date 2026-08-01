@@ -191,6 +191,68 @@
   }
 
 }
+ /* ===== Current Opportunities ===== */
+
+.featured-now-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:28px;
+  margin:40px 0;
+}
+
+.now-tile{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  transition:.25s ease;
+}
+
+.now-tile:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 36px rgba(0,0,0,.12);
+}
+
+.now-top{
+  padding:18px 22px 0;
+}
+
+.now-title{
+  font-size:1.1rem;
+  color:var(--aqua);
+}
+
+.now-snapshot{
+  width:100%;
+  display:block;
+  margin-top:16px;
+}
+
+.now-meta{
+  padding:18px 22px 0;
+  font-size:.92rem;
+  color:#777;
+}
+
+.now-tile .muted{
+  padding:12px 22px;
+}
+
+.now-actions{
+  padding:0 22px 22px;
+}
+
+.now-actions .btn{
+  width:100%;
+}
+
+@media (max-width:768px){
+
+  .featured-now-grid{
+    grid-template-columns:1fr;
+  }
+
+}
   </style>
 </head>
 <body>
@@ -288,19 +350,114 @@ Every recommendation is tailored to your budget, timeline, and long-term goals�
   </div>
 
   <h2 class="accent-title">Current Opportunities</h2>
+<div class="featured-now">
 
-  <div class="featured-now">
+  <p class="muted">
+    Here are two examples of properties currently available through our MLS. Every buyer's needs are different, so if these aren't the right fit, I'll help you identify other opportunities that better match your goals, budget, and timeline.
+    <span class="disclaimer">
+      Listings are sourced via our brokerage's MLS and update frequently.
+    </span>
+  </p>
+
+</div>
+
+<div class="featured-now-grid">
+
+  <article class="now-tile">
+
+    <div class="now-top">
+      <strong class="now-title">BMLS 60823</strong>
+    </div>
+
+    <img
+      src="bmls-60823-snapshot.jpeg"
+      alt="The Reef at Atlantis condominium"
+      class="now-snapshot"
+      loading="lazy">
+
+    <div class="now-meta">
+      Paradise Island • Resort Condominium
+    </div>
 
     <p class="muted">
-      Here are two examples of properties currently available through our MLS. Every buyer's needs are different, so if these aren't the right fit, I'll help you identify opportunities that better match your goals, budget, and timeline.
-      <span class="disclaimer">
-        Listings are sourced through our brokerage's MLS and update regularly.
-      </span>
+      A beautifully appointed residence at <strong>The Reef at Atlantis</strong>, combining luxury ownership with optional rental income and world-class resort amenities.
     </p>
+
+    <div class="now-actions">
+      <a
+        class="btn btn-outline"
+        href="https://listings.1oakbahamas.com/listing/2umnd?u=27272"
+        target="_blank"
+        rel="noopener">
+        View Property
+      </a>
+    </div>
+
+  </article>
+
+  <article class="now-tile">
+
+    <div class="now-top">
+      <strong class="now-title">BMLS 66004</strong>
+    </div>
+
+    <img
+      src="tuckaway-66004-snapshot.jpeg"
+      alt="51 Tuckaway Road Nassau"
+      class="now-snapshot"
+      loading="lazy">
+
+    <div class="now-meta">
+      Nassau • Single Family Residence
+    </div>
+
+    <p class="muted">
+      An established Nassau home offering generous living space, mature surroundings, and excellent long-term value for homeowners seeking room to grow.
+    </p>
+
+    <div class="now-actions">
+      <a
+        class="btn btn-outline"
+        href="https://listings.1oakbahamas.com/listing/34l2i?u=27272"
+        target="_blank"
+        rel="noopener">
+        View Property
+      </a>
+    </div>
+
+  </article>
+
+</div>
+
+<div style="text-align:center;margin-top:34px;">
+
+  <p class="muted">
+    Looking for something different? Browse the complete MLS or contact me for a personalized shortlist based on your preferred locations, budget, and goals.
+  </p>
+
+  <div style="margin-top:18px;">
+
+    <a
+      class="btn btn-outline"
+      href="https://rubysweeting.realtyhd.com"
+      target="_blank"
+      rel="noopener">
+      Browse All MLS Listings
+    </a>
 
   </div>
 
-  <div style="text-align:center;margin-top:30px;">
+  <div style="margin-top:18px;">
+
+    <a
+      class="btn btn-primary"
+      href="#contact">
+      Request My Personalized Property Shortlist
+    </a>
+
+  </div>
+
+</div>
 
     <p class="muted">
       Looking for something different?
