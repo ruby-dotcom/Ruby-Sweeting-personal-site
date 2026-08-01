@@ -128,6 +128,69 @@
         padding: 40px 15px;
       }
     }
+    /* ===== Explore Property Opportunities ===== */
+
+.visual-listings{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  margin:40px 0;
+}
+
+.visual-card{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  transition:.25s ease;
+}
+
+.visual-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 36px rgba(0,0,0,.12);
+}
+
+.visual-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+.visual-card figcaption{
+  padding:20px;
+  line-height:1.6;
+}
+
+.accent-title{
+  text-align:center;
+  margin:60px 0 20px;
+}
+
+.featured-now{
+  max-width:850px;
+  margin:0 auto 35px;
+  text-align:center;
+}
+
+.disclaimer{
+  display:block;
+  margin-top:12px;
+  font-size:.9rem;
+  opacity:.75;
+}
+
+@media (max-width:768px){
+
+  .visual-listings{
+    grid-template-columns:1fr;
+  }
+
+  .visual-card img{
+    height:200px;
+  }
+
+}
   </style>
 </head>
 <body>
@@ -173,28 +236,84 @@ Every recommendation is tailored to your budget, timeline, and long-term goals�
 </section>
 
     <section id="listings" class="section-wrapper">
-      <h2>Featured Listings</h2>
-      <div class="grid">
-        <div class="card">
-          <strong>Oceanview Paradise Villa</strong>
-          A stunning 4-bedroom villa with panoramic Atlantic views in Nassau—perfect for buyers seeking a luxury retreat with island charm.
-        </div>
-        <div class="card">
-          <strong>Charming Eleuthera Cottage</strong>
-          Cozy 2-bedroom beachfront cottage ideal as a vacation rental or peaceful full-time residence on one of The Bahamas’ most beloved family islands.
-        </div>
-        <div class="card">
-          <strong>Harbour Island Hideaway</strong>
-          Boutique-style 3-bedroom home close to Pink Sand Beach—blending upscale island living with strong rental potential.
-        </div>
-        <div class="card">
-          <strong>Smart Starter Condo (Under $300K)</strong>
-          Modern 1-bedroom, 1-bath condo listed under $300,000 — an excellent option for first-time buyers or investors exploring the Bahamian market.
-        </div>
-      </div>
-      <p style="margin-top:20px;">For current, live listings and full details, Ruby works directly with the <strong>Bahamas MLS</strong> — ensuring you always see accurate, up-to-date properties across the islands.</p>
-    </section>
 
+  <h2>Explore Property Opportunities</h2>
+
+  <p class="subtle center">
+    Whether you're searching for a family home, an investment property, a vacation retreat, or land to build your vision, these examples reflect the types of properties I help clients buy throughout Nassau and the Family Islands.
+  </p>
+
+  <div class="visual-listings">
+
+    <figure class="visual-card">
+      <img src="sample-resort.jpeg"
+           alt="Resort-style beachfront living in The Bahamas"
+           loading="lazy">
+      <figcaption>
+        <strong>Resort &amp; Second-Home Living</strong><br>
+        Ideal for overseas buyers seeking lifestyle, rental income, and hands-off ownership.
+      </figcaption>
+    </figure>
+
+    <figure class="visual-card">
+      <img src="sample-home.jpeg"
+           alt="Detached family home in Nassau"
+           loading="lazy">
+      <figcaption>
+        <strong>Family Homes &amp; Local Living</strong><br>
+        Practical homes for Bahamian residents, professionals, and growing families.
+      </figcaption>
+    </figure>
+
+    <figure class="visual-card">
+      <img src="sample-condo.jpeg"
+           alt="Modern condominium in The Bahamas"
+           loading="lazy">
+      <figcaption>
+        <strong>Condos &amp; Investment Opportunities</strong><br>
+        Lock-and-leave ownership with strong rental potential and long-term value.
+      </figcaption>
+    </figure>
+
+    <figure class="visual-card">
+      <img src="roadside.breeze.jpeg"
+           alt="Vacant land in The Bahamas"
+           loading="lazy">
+      <figcaption>
+        <strong>Vacant Land &amp; Future Development</strong><br>
+        Build-ready parcels for custom homes, investment, or future development.
+      </figcaption>
+    </figure>
+
+  </div>
+
+  <h2 class="accent-title">Current Opportunities</h2>
+
+  <div class="featured-now">
+
+    <p class="muted">
+      Here are two examples of properties currently available through our MLS. Every buyer's needs are different, so if these aren't the right fit, I'll help you identify opportunities that better match your goals, budget, and timeline.
+      <span class="disclaimer">
+        Listings are sourced through our brokerage's MLS and update regularly.
+      </span>
+    </p>
+
+  </div>
+
+  <div style="text-align:center;margin-top:30px;">
+
+    <p class="muted">
+      Looking for something different?
+      Tell me what you're hoping to find, and I'll prepare a personalized shortlist based on your preferred location, budget, and lifestyle.
+    </p>
+
+    <a class="btn btn-primary" href="#contact">
+      Request My Personalized Property Shortlist
+    </a>
+
+  </div>
+
+</section>
     <section id="testimonials" class="section-wrapper">
       <h2>Client Testimonials</h2>
       <div class="grid">
@@ -230,6 +349,7 @@ Every recommendation is tailored to your budget, timeline, and long-term goals�
         </p>
       </div>
     </section>
+    
   </main>
 
   <footer>
