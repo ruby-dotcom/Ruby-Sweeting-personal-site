@@ -3078,6 +3078,29 @@ Every client and every property journey is different. These are a few words from
   </label>
 </div>
 
+    <option>Vacation Home</option>
+    <option>General Question</option>
+  </select>
+
+</div>
+
+<div class="form-field">
+  <label>How can I help you?</label>
+
+  <select name="interest" required>
+    <option value="">Please choose...</option>
+    <option>Buy a Home</option>
+    <option>Sell My Property</option>
+    <option>Investment Property</option>
+    <option>Commercial Property</option>
+    <option>Vacant Land</option>
+    <option>Property Management</option>
+    <option>Vacation Home</option>
+    <option>General Question</option>
+  </select>
+
+</div>
+
 <div class="form-field">
   <label>Your Name</label>
   <input type="text" name="name" required />
@@ -3089,18 +3112,26 @@ Every client and every property journey is different. These are a few words from
 </div>
 
 <div class="form-field">
-  <label>Message</label>
-  <textarea name="message" rows="5" required></textarea>
+  <label>Mobile Number</label>
+  <input type="tel" name="phone" />
+</div>
+
+<div class="form-field">
+  <label>Tell me a little about what you're looking for.</label>
+
+  <textarea
+    name="message"
+    rows="6"
+    placeholder="Tell me about your goals, preferred location, budget, timeline, or any questions..."
+    required></textarea>
+
 </div>
 
 <div class="form-actions">
-  <button class="btn btn-primary" type="submit">Send Message</button>
+  <button class="btn btn-primary" type="submit">
+    Start My Consultation
+  </button>
 </div>
-  
-</form>
-</div>
-</section>
-
     <footer> 
 <p class="subtle center" style="font-size:13px; opacity:.7;">
   Licensed Bahamas Real Estate Agent • Member: Bahamas Real Estate Association (BREA) & Bahamas Multiple Listing Service (BMLS)
