@@ -3326,8 +3326,8 @@ if (params.get('sent') === '1') {
     note.style.marginTop = '14px';
     
       note.innerHTML =
-  '<div><strong>Thank you for reaching out!</strong><div class="muted">Your message has been received, and I will personally review it before responding. I look forward to learning more about your real estate goals.</div></div>';
-    // Insert near the top of the Contact section
+  note.innerHTML =
+  '<div><strong>Thank you for reaching out!</strong><div class="muted">Your consultation has been received successfully. I\'ll personally review your information and be in touch soon. Thank you for the opportunity to help you with your real estate goals.</div></div>';
     contact.insertBefore(note, contact.children[1] || null);
 
     // Clean URL (removes ?sent=1 but keeps you on Contact)
