@@ -3352,23 +3352,48 @@ After reviewing your consultation, I'll personally contact you with guidance tai
 </script>
 <script>
 (function () {
-  const qs = window.location.search || (window.location.hash.includes('?') ? window.location.hash.split('?')[1] : '');
-const params = new URLSearchParams(qs);
-if (params.get('sent') === '1') {
+
+  const qs =
+    window.location.search ||
+    (window.location.hash.includes('?')
+      ? window.location.hash.split('?')[1]
+      : '');
+
+  const params = new URLSearchParams(qs);
+
+  if (params.get('sent') === '1') {
+
     const contact = document.querySelector('#contact');
     if (!contact) return;
 
+    // Hide the consultation form
+    const formWrap = contact.querySelector('.contact-form-wrap');
+    if (formWrap) {
+      formWrap.style.display = 'none';
+    }
+
+    // Create the confirmation message
     const note = document.createElement('div');
     note.className = 'cta-bar';
-    note.style.marginTop = '14px';
-    
-     note.innerHTML =
-  '<div><strong>Thank you for reaching out!</strong><div class="muted">Your consultation has been received successfully. I\'ll personally review your information and be in touch soon. Thank you for the opportunity to help you with your real estate goals.</div></div>';
-    contact.insertBefore(note, contact.children[1] || null);
+    note.style.marginTop = '24px';
 
-    // Clean URL (removes ?sent=1 but keeps you on Contact)
+    note.innerHTML = `
+      <div>
+        <strong>Thank you for reaching out!</strong>
+        <div class="muted" style="margin-top:8px;">
+          Your consultation has been received successfully.
+          I'll personally review your information and be in touch as soon as possible.
+        </div>
+      </div>
+    `;
+
+    // Display confirmation where the form was
+    contact.insertBefore(note, formWrap);
+
+    // Remove ?sent=1 from the URL
     history.replaceState({}, document.title, window.location.pathname + '#contact');
   }
+
 })();
 </script>
 <!-- === IDX Listing Modal === -->
